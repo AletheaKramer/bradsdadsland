@@ -1,7 +1,7 @@
 import React from "react";
 import heroImage from "./assets/views.jpg";
 import bradsdadsland from "./assets/logo.gif";
-import Nav from "./components/nav";
+import Nav from "./components/Nav.jsx";
 import Campsite from "./components/Campsite";
 
 function App() {
