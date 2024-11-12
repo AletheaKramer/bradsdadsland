@@ -15,6 +15,7 @@ export default {
       },
       fontFamily: {
         sans: ['DM Sans', 'sans-serif'],
+        lora: ['"Lora"', "serif"],
       },
     },
   },
