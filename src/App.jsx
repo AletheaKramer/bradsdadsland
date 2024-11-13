@@ -6,7 +6,7 @@ import Campsite from "./components/Campsite";
 
 function App() {
   const [showHeroButton, setShowHeroButton] = useState(false);
-  const headerButtonRef = useRef(null); // Reference to the header "Book Now" button
+  const headerButtonRef = useRef(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -31,13 +31,17 @@ function App() {
   }, []);
 
   return (
-    <div>
-      <div className="p-8 pb-24 bg-beigePrimary min-h-screen">
+    <div className="w-screen min-h-screen bg-beigePrimary">
+      <div className="p-8 pb-24">
         <div className="max-w-[2000px] mx-auto">
           <div className="flex justify-between">
             <div>
-              <img src={bradsdadsland} alt="Logo" className="w-[500px]" />
-              <h1 className="font-sans text-4xl w-72 ml-4 mb-8 mt-4 tracking-wider text-brownPrimary">
+              <img
+                src={bradsdadsland}
+                alt="Logo"
+                className="w-[250px] lg:w-[400px]"
+              />
+              <h1 className="font-sans text-xl w-40 lg:text-2xl lg:w-56 ml-4 mb-8 mt-4 tracking-wide text-brownPrimary">
                 Camping from days gone by
               </h1>
             </div>
@@ -46,17 +50,20 @@ function App() {
               <Nav />
               <button
                 ref={headerButtonRef}
-                className="absolute bottom-0 right-0 mb-8 text-4xl px-10 py-4 border border-brownPrimary rounded-full font-sans font-medium text-brownPrimary hover:bg-brownPrimary hover:text-beigePrimary transition"
+                className="absolute bottom-0 right-0 mb-8 text-sm md:text-md lg:text-lg xl:text-xl px-4 md:px-6 lg:px-8 py-1 md:py-2 lg:py-3 border border-brownPrimary rounded-full font-sans font-medium text-brownPrimary hover:bg-brownPrimary hover:text-beigePrimary transition whitespace-nowrap"
+                onClick={() =>
+                  window.open(
+                    "https://www.campspot.com/book/bradsdadsland",
+                    "_blank"
+                  )
+                }
               >
                 Book Now
               </button>
             </div>
           </div>
 
-          <div
-            className="relative w-full mx-auto border rounded-lg overflow-hidden"
-            style={{ height: "calc(100vh - 4rem)" }}
-          >
+          <div className="relative w-full border rounded-lg overflow-hidden h-[calc(100vh-12rem)] lg:h-[calc(100vh-4rem)]">
             <img
               src={heroImage}
               alt="Main header"
@@ -64,11 +71,17 @@ function App() {
             />
             <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-40 text-white">
               <button
-                className={`text-4xl px-10 py-4 border border-beigePrimary rounded-full font-lora font-medium text-5xl text-beigePrimary transition duration-300 ease-in-out hover:border-4 ${
+                className={`text-2xl px-8 py-3 border border-beigePrimary rounded-full font-lora font-medium text-5xl text-beigePrimary transition duration-300 ease-in-out hover:border-4 ${
                   showHeroButton
                     ? "opacity-100"
                     : "opacity-0 pointer-events-none"
                 }`}
+                onClick={() =>
+                  window.open(
+                    "https://www.campspot.com/book/bradsdadsland",
+                    "_blank"
+                  )
+                }
               >
                 Book Now
               </button>
@@ -76,7 +89,7 @@ function App() {
           </div>
         </div>
       </div>
-      <div className="bg-brownPrimary">
+      <div className="bg-brownPrimary w-full">
         <div className="max-w-[2000px] mx-auto">
           <Campsite />
         </div>
