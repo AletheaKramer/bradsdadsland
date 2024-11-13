@@ -71,7 +71,7 @@ function App() {
             />
             <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-40 text-white">
               <button
-                className={`text-2xl px-8 py-3 border border-beigePrimary rounded-full font-lora font-medium text-5xl text-beigePrimary transition duration-300 ease-in-out hover:border-4 ${
+                className={`lg:text-3xl sm:text-xl px-8 py-3 border border-beigePrimary rounded-full font-lora font-medium text-beigePrimary transition duration-300 ease-in-out hover:border-4 ${
                   showHeroButton
                     ? "opacity-100"
                     : "opacity-0 pointer-events-none"
