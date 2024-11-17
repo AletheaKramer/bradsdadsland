@@ -12,6 +12,7 @@ export default {
         beigePrimary: "#f7ede2",
         brownPrimary: "#382b1e",
         beigeSecondary: "#988c81",
+        peach: "#edcfb3"
       },
       fontFamily: {
         sans: ['DM Sans', 'sans-serif'],

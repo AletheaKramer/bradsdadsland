@@ -6,6 +6,7 @@ import Campsite from "./components/Campsite";
 
 function App() {
   const [showHeroButton, setShowHeroButton] = useState(false);
+  const [buttonClickEffect, setButtonClickEffect] = useState(null);
   const headerButtonRef = useRef(null);
 
   useEffect(() => {
@@ -29,6 +30,14 @@ function App() {
       }
     };
   }, []);
+
+  const handleButtonClick = (buttonName) => {
+    setButtonClickEffect(buttonName);
+
+    setTimeout(() => {
+      setButtonClickEffect(null); // Remove the effect after 1 second
+    }, 1000);
+  };
 
   return (
     <div className="w-screen min-h-screen bg-beigePrimary">
@@ -71,7 +80,7 @@ function App() {
             />
             <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-40 text-white">
               <button
-                className={`lg:text-3xl sm:text-xl px-8 py-3 border border-beigePrimary rounded-full font-lora font-medium text-beigePrimary transition duration-300 ease-in-out hover:border-4 ${
+                className={`hidden lg:block lg:text-3xl px-8 py-3 border border-beigePrimary rounded-full font-lora font-medium text-beigePrimary transition duration-300 ease-in-out hover:border-4 ${
                   showHeroButton
                     ? "opacity-100"
                     : "opacity-0 pointer-events-none"
@@ -93,6 +102,42 @@ function App() {
         <div className="max-w-[2000px] mx-auto">
           <Campsite />
         </div>
+      </div>
+
+      <div
+        className={`fixed block bottom-0 z-100 left-0 right-0 bg-peach p-2 flex justify-around items-center lg:hidden shadow-md transition duration-300 ease-in-out ${
+          showHeroButton ? "opacity-100" : "opacity-0 pointer-events-none"
+        }`}
+      >
+        <button
+          className={`text-sm px-10 py-1 border border-brownPrimary rounded-full font-sans font-medium ${
+            buttonClickEffect === "book"
+              ? "bg-brownPrimary text-beigePrimary"
+              : "text-brownPrimary"
+          } transition`}
+          onClick={() => {
+            handleButtonClick("book");
+            window.open(
+              "https://www.campspot.com/book/bradsdadsland",
+              "_blank"
+            );
+          }}
+        >
+          Book Now
+        </button>
+        <button
+          className={`text-sm px-10 py-1 border border-brownPrimary rounded-full font-sans font-medium ${
+            buttonClickEffect === "scroll"
+              ? "bg-brownPrimary text-beigePrimary"
+              : "text-brownPrimary"
+          } transition`}
+          onClick={() => {
+            handleButtonClick("scroll");
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          }}
+        >
+          Scroll to Top
+        </button>
       </div>
     </div>
   );

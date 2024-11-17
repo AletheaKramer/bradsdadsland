@@ -41,11 +41,7 @@ const Campsite = () => {
               alt="Clean outhouses"
               label="Clean outhouses"
             />
-            <Icon
-              src={shower}
-              alt="Child-friendly showers"
-              label="Child-friendly showers"
-            />
+            <Icon src={shower} alt="Indoor showers" label="Indoor showers" />
             <Icon
               src={playground}
               alt="Children's playground"
