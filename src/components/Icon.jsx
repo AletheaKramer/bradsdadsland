@@ -4,7 +4,7 @@ const Icon = ({ src, alt, label }) => {
   return (
     <div>
       <div className="flex items-center space-x-2 sm:space-x-4">
-        <div className="bg-beigePrimary m-1 min-w-8 lg:m-2 p-2 sm:p-4 rounded-full shadow-md">
+        <div className="bg-beigePrimary m-1 min-w-8 mr-2 lg:m-2 p-2 sm:p-4 rounded-full shadow-md">
           <img
             src={src}
             alt={alt}

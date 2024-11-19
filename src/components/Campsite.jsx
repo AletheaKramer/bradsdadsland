@@ -7,6 +7,7 @@ import outhouse from "../assets/outhouse.svg";
 import shower from "../assets/shower.svg";
 import playground from "../assets/playground.svg";
 import Icon from "./Icon";
+import CampsitePic from "../assets/campsite.jpg";
 
 const Campsite = () => {
   return (
@@ -55,6 +56,13 @@ const Campsite = () => {
           alt="map"
           className="object-cover w-full lg:w-1/2 mt-8 lg:mt-0"
         />
+      </div>
+      <div>
+        <img
+          src={CampsitePic}
+          alt="Campsite"
+          className="object-cover w-full rounded-[2rem]"
+        ></img>
       </div>
     </div>
   );

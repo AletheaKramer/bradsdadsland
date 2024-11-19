@@ -3,16 +3,18 @@ import heroImage from "./assets/views.jpg";
 import bradsdadsland from "./assets/logo.gif";
 import Nav from "./components/Nav.jsx";
 import Campsite from "./components/Campsite";
+import Vibe from "./components/Vibe.jsx";
 
 function App() {
   const [showHeroButton, setShowHeroButton] = useState(false);
-  const [buttonClickEffect, setButtonClickEffect] = useState(null);
+  const [showScrollToTop, setShowScrollToTop] = useState(false);
   const headerButtonRef = useRef(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         setShowHeroButton(!entry.isIntersecting);
+        setShowScrollToTop(entry.isIntersecting === false);
       },
       {
         rootMargin: "0px",
@@ -31,18 +33,10 @@ function App() {
     };
   }, []);
 
-  const handleButtonClick = (buttonName) => {
-    setButtonClickEffect(buttonName);
-
-    setTimeout(() => {
-      setButtonClickEffect(null); // Remove the effect after 1 second
-    }, 1000);
-  };
-
   return (
     <div className="w-screen min-h-screen bg-beigePrimary">
       <div className="p-8 pb-24">
-        <div className="max-w-[2000px] mx-auto">
+        <div className="max-w-[1500px] mx-auto">
           <div className="flex justify-between">
             <div>
               <img
@@ -99,46 +93,38 @@ function App() {
         </div>
       </div>
       <div className="bg-brownPrimary w-full">
-        <div className="max-w-[2000px] mx-auto">
+        <div className="max-w-[1500px] mx-auto">
           <Campsite />
         </div>
       </div>
 
-      <div
-        className={`fixed block bottom-0 z-100 left-0 right-0 bg-peach p-2 flex justify-around items-center lg:hidden shadow-md transition duration-300 ease-in-out ${
-          showHeroButton ? "opacity-100" : "opacity-0 pointer-events-none"
-        }`}
-      >
-        <button
-          className={`text-sm px-10 py-1 border border-brownPrimary rounded-full font-sans font-medium ${
-            buttonClickEffect === "book"
-              ? "bg-brownPrimary text-beigePrimary"
-              : "text-brownPrimary"
-          } transition`}
-          onClick={() => {
-            handleButtonClick("book");
-            window.open(
-              "https://www.campspot.com/book/bradsdadsland",
-              "_blank"
-            );
-          }}
-        >
-          Book Now
-        </button>
-        <button
-          className={`text-sm px-10 py-1 border border-brownPrimary rounded-full font-sans font-medium ${
-            buttonClickEffect === "scroll"
-              ? "bg-brownPrimary text-beigePrimary"
-              : "text-brownPrimary"
-          } transition`}
-          onClick={() => {
-            handleButtonClick("scroll");
-            window.scrollTo({ top: 0, behavior: "smooth" });
-          }}
-        >
-          Scroll to Top
-        </button>
+      <div className="bg-brownPrimary w-full">
+        <div className="max-w-[1500px] mx-auto">
+          <Vibe />
+        </div>
       </div>
+
+      {showScrollToTop && (
+        <div>
+          <button
+            className="fixed bottom-4 right-4 bg-beigePrimary text-brownPrimary w-12 h-12 rounded-full shadow-lg flex items-center justify-center hover:bg-peach hover:text-white transition"
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          >
+            ↑
+          </button>
+          <button
+            className="fixed bottom-4 right-20 bg-beigePrimary text-brownPrimary w-28 h-12 rounded-full shadow-lg flex items-center justify-center hover:bg-peach hover:text-white transition"
+            onClick={() =>
+              window.open(
+                "https://www.campspot.com/book/bradsdadsland",
+                "_blank"
+              )
+            }
+          >
+            Book Now
+          </button>
+        </div>
+      )}
     </div>
   );
 }
