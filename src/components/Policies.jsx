@@ -10,7 +10,8 @@ const Policies = () => {
         </h2>
 
         <p className="text-lg">
-          <strong>Check-in:</strong> 1:00 PM<br />
+          <strong>Check-in:</strong> 1:00 PM
+          <br />
           <strong>Check-out:</strong> 11:00 AM
         </p>
         <p className="text-lg mt-4">
@@ -43,7 +44,9 @@ const Policies = () => {
           </li>
         </ul>
 
-        <h3 className="text-2xl font-semibold mt-6">Glamping and RV Rentals:</h3>
+        <h3 className="text-2xl font-semibold mt-6">
+          Glamping and RV Rentals:
+        </h3>
         <ul className="list-disc list-inside text-lg">
           <li>
             50% non-refundable deposit required at booking; balance charged 60
