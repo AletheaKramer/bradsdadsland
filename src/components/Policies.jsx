@@ -1,4 +1,5 @@
 import React from "react";
+import welcomeSignImage from "../assets/welcome-sign.jpg"; // Updated image file path
 
 const Policies = () => {
   return (
@@ -18,6 +19,15 @@ const Policies = () => {
           Call ahead to confirm site suitability if your RV is extra high or
           long.
         </p>
+
+        {/* New Image Section */}
+        <div className="mt-6">
+          <img
+            src={welcomeSignImage}
+            alt="Welcome Sign"
+            className="w-full rounded-lg shadow-lg"
+          />
+        </div>
 
         <h3 className="text-2xl font-semibold mt-6">General Policies:</h3>
         <ul className="list-disc list-inside text-lg">
