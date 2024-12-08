@@ -5,6 +5,7 @@ import Nav from "./components/Nav.jsx";
 import Campsite from "./components/Campsite";
 import Vibe from "./components/Vibe.jsx";
 import Pricing from "./components/Pricing"; // Import the new Pricing component
+import Policies from "./components/Policies"; // Import the new Policies component
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"; // Import React Router
 import { Link } from "react-router-dom"; // Import Link for navigation
 
@@ -14,6 +15,7 @@ function App() {
   const headerButtonRef = useRef(null);
 
   useEffect(() => {
+    // Intersection Observer to manage visibility of hero button and scroll-to-top button
     const observer = new IntersectionObserver(
       ([entry]) => {
         setShowHeroButton(!entry.isIntersecting);
@@ -43,7 +45,7 @@ function App() {
           <div className="max-w-[1500px] mx-auto">
             <div className="flex justify-between">
               <div>
-                <Link to="/">
+                <Link to="/"> 
                   <img
                     src={bradsdadsland}
                     alt="Logo"
@@ -72,6 +74,7 @@ function App() {
               </div>
             </div>
 
+            {/* Hero Section */}
             <div className="relative w-full border rounded-lg overflow-hidden h-[calc(100vh-12rem)] lg:h-[calc(100vh-4rem)]">
               <img
                 src={heroImage}
@@ -99,18 +102,21 @@ function App() {
           </div>
         </div>
 
+        {/* Routes Section */}
         <div className="bg-brownPrimary w-full">
           <div className="max-w-[1500px] mx-auto">
             <Routes>
               <Route path="/" element={<Campsite />} />
               <Route path="/vibe" element={<Vibe />} />
               <Route path="/pricing" element={<Pricing />} /> {/* Add Pricing Route */}
+              <Route path="/policies" element={<Policies />} /> {/* Add Policies Route */}
             </Routes>
           </div>
         </div>
 
         {showScrollToTop && (
           <div>
+            {/* Scroll to Top and Book Now Buttons */}
             <button
               className="fixed bottom-4 right-4 bg-beigePrimary text-brownPrimary w-12 h-12 rounded-full shadow-lg flex items-center justify-center hover:bg-peach hover:text-white transition"
               onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
@@ -136,4 +142,3 @@ function App() {
 }
 
 export default App;
-
