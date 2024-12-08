@@ -5,6 +5,7 @@ import Nav from "./components/Nav.jsx";
 import Campsite from "./components/Campsite";
 import Gallery from "./components/Gallery";
 import Pricing from "./components/Pricing"; // Import the new Pricing component
+import Policies from "./components/Policies"; // Import the new Policies component
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"; // Import React Router
 import { Link } from "react-router-dom"; // Import Link for navigation
 import { Arrow } from "./components/Icon";
@@ -15,6 +16,7 @@ function App() {
   const headerButtonRef = useRef(null);
 
   useEffect(() => {
+    // Intersection Observer to manage visibility of hero button and scroll-to-top button
     const observer = new IntersectionObserver(
       ([entry]) => {
         setShowHeroButton(!entry.isIntersecting);
@@ -73,6 +75,7 @@ function App() {
               </div>
             </div>
 
+            {/* Hero Section */}
             <div className="relative w-full border rounded-lg overflow-hidden h-[calc(100vh-12rem)] lg:h-[calc(100vh-4rem)]">
               <img
                 src={heroImage}
@@ -100,6 +103,7 @@ function App() {
           </div>
         </div>
 
+        {/* Routes Section */}
         <div className="bg-brownPrimary w-full">
           <div className="max-w-[1500px] mx-auto">
             <Routes>
@@ -107,6 +111,8 @@ function App() {
               <Route path="/gallery" element={<Gallery />} />
               <Route path="/pricing" element={<Pricing />} />{" "}
               {/* Add Pricing Route */}
+              <Route path="/policies" element={<Policies />} />{" "}
+              {/* Add Policies Route */}
             </Routes>
           </div>
         </div>

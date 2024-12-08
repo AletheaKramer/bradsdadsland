@@ -44,7 +44,7 @@ const Nav = () => {
           <Link to="/pricing" className="hover:text-beigeSecondary text-lg">
             Pricing
           </Link>
-          <a href="/#policies" className="hover:text-beigeSecondary text-lg">
+          <a href="/policies" className="hover:text-beigeSecondary text-lg">
             Policies
           </a>
           <a href="/#contact" className="hover:text-beigeSecondary text-lg">
@@ -73,7 +73,7 @@ const Nav = () => {
                 Pricing
               </Link>
               <a
-                href="/#policies"
+                href="/policies"
                 className="block text-xl font-sans text-brownPrimary hover:text-beigeSecondary"
                 onClick={() => setIsOpen(false)}
               >
