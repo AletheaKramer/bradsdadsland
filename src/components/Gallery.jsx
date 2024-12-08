@@ -1,74 +1,61 @@
 import React, { useState } from "react";
 
-import Stairs from "../assets/stairs.png";
-import Frontgate from "../assets/frontgate.png";
-import { Arrow } from "./Icon";
+// Props: Accept an array of image URLs
+const Gallery = ({ images = [] }) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
 
-const Gallery = () => {
-  const [showMore, setShowMore] = useState(false);
+  const handleToggle = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+  };
 
   return (
     <div className="relative overflow-hidden">
       <div
         className="flex transition-transform duration-500 ease-in-out"
-        style={{ transform: showMore ? "translateX(-100%)" : "translateX(0)" }}
+        style={{ transform: `translateX(-${currentIndex * 100}%)` }}
       >
-        {/* First set of images */}
-        <div className="flex-none w-full">
-          <div className="flex flex-col lg:flex-row gap-4 pr-8 p-4 lg:pr-12 lg:p-4">
-            <img
-              src={Stairs}
-              alt="Stairs"
-              className="object-cover w-full lg:w-4/12 rounded-[2rem]"
-            />
-            <img
-              src={Frontgate}
-              alt="Front gate"
-              className="object-cover w-full lg:w-8/12 rounded-[2rem]"
-            />
+        {/* Dynamically render image sets */}
+        {images.map((image, index) => (
+          <div key={index} className="flex-none w-full">
+            <div className="flex flex-col lg:flex-row gap-4 pr-8 p-4 lg:pr-12 lg:p-4">
+              <img
+                src={image}
+                alt={`Gallery Image ${index + 1}`}
+                className="object-cover w-full lg:w-8/12 rounded-[2rem]"
+              />
+            </div>
           </div>
-        </div>
-
-        {/* Second set of images */}
-        <div className="flex-none w-full">
-          <div className="flex flex-col lg:flex-row gap-4 pr-8 p-4 lg:pr-12 lg:p-4">
-            <img
-              src={Stairs}
-              alt="Stairs"
-              className="object-cover w-full lg:w-4/12 rounded-[2rem]"
-            />
-            <img
-              src={Frontgate}
-              alt="Front gate"
-              className="object-cover w-full lg:w-8/12 rounded-[2rem]"
-            />
-          </div>
-        </div>
+        ))}
       </div>
 
-      {/* Navigation buttons */}
-      <div className="absolute top-1/2 -translate-y-1/2 right-12 lg:right-16">
+      {/* Navigation Button */}
+      <div className="absolute top-1/2 transform -translate-y-1/2 right-4 lg:right-12">
         <button
-          onClick={() => setShowMore(!showMore)}
-          className="w-12 h-12 rounded-full bg-beigePrimary text-brownPrimary shadow-lg flex items-center justify-center hover:bg-peach hover:text-white transition"
-          aria-label={showMore ? "Previous" : "Next"}
+          onClick={handleToggle}
+          className="w-12 h-12 flex items-center justify-center rounded-full bg-beigePrimary text-brownPrimary shadow-lg hover:bg-peach hover:text-white transition-transform active:scale-90"
+          aria-label="Toggle Navigation"
         >
-          <Arrow direction={showMore ? "left" : "right"} />
+          {/* Flipping Arrow Icon */}
+          <span
+            className={`text-3xl font-bold transform transition-transform duration-300 ${
+              currentIndex === 1 ? "rotate-180" : ""
+            }`}
+          >
+            >
+          </span>
         </button>
       </div>
 
-      {/* Dots indicator */}
+      {/* Dots Indicator */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2">
-        <div
-          className={`h-2 w-2 rounded-full transition-colors duration-300 ${
-            !showMore ? "bg-beigePrimary" : "bg-beigePrimary/50"
-          }`}
-        />
-        <div
-          className={`h-2 w-2 rounded-full transition-colors duration-300 ${
-            showMore ? "bg-beigePrimary" : "bg-beigePrimary/50"
-          }`}
-        />
+        {images.map((_, index) => (
+          <div
+            key={index}
+            className={`h-2 w-2 rounded-full transition-colors duration-300 ${
+              currentIndex === index ? "bg-beigePrimary" : "bg-beigePrimary/50"
+            }`}
+          />
+        ))}
       </div>
     </div>
   );

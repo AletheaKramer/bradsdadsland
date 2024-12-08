@@ -1,16 +1,19 @@
 import React from "react";
+import Gallery from "./Gallery"; // Assuming the gallery component is already in your project
 import swingsetImage from "../assets/swingset.jpg";
 import sandboxImage from "../assets/sandbox.jpg";
 import toiletsImage from "../assets/toilets.jpg";
 import showersImage from "../assets/showers.jpg";
 import outhouseOneImage from "../assets/outhouse-one.jpg";
-import laundryImage from "../assets/laundry-machines.jpg";
+import outhouseTwoImage from "../assets/outhouse-two.jpg";
+import laundryOneImage from "../assets/laundry-machines-one.jpg"; // Updated filename
+import laundryTwoImage from "../assets/laundry-machines-two.jpg"; // Updated filename
 import recyclingImage from "../assets/recycling-garbage-freezer.jpg";
 import officeStoreImage from "../assets/office-and-store.jpg";
 import capeCodImage from "../assets/cape-cod-chair.jpg";
-import oceanfrontImage from "../assets/oceanfront.jpg";
 import beachAccessOneImage from "../assets/beach-access-one.jpg";
 import beachAccessTwoImage from "../assets/beach-access-two.jpg";
+import oceanfrontImage from "../assets/oceanfront.jpg";
 
 const Amenities = () => {
   const sections = [
@@ -41,13 +44,13 @@ const Amenities = () => {
     {
       title: "Outhouses",
       description: "8 very clean outhouses located conveniently around the campsite to serve all guests.",
-      image: outhouseOneImage,
+      gallery: [outhouseOneImage, outhouseTwoImage], // Use gallery for multiple images
       reverse: false,
     },
     {
       title: "Laundry Facility",
       description: "On-site laundry machines make it easy to stay fresh during extended stays.",
-      image: laundryImage,
+      gallery: [laundryOneImage, laundryTwoImage], // Updated filenames and gallery
       reverse: true,
     },
     {
@@ -71,7 +74,7 @@ const Amenities = () => {
     {
       title: "Beach Access",
       description: "Enjoy 1,000 feet of oceanfront and easy access to the beach, providing breathtaking views and relaxation.",
-      image: beachAccessOneImage,
+      gallery: [beachAccessOneImage, beachAccessTwoImage], // Added gallery for beach access
       reverse: true,
     },
     {
@@ -98,13 +101,17 @@ const Amenities = () => {
               <h3 className="text-2xl font-semibold text-beigePrimary mb-4">{section.title}</h3>
               <p className="text-lg text-beigePrimary">{section.description}</p>
             </div>
-            {/* Image Section */}
+            {/* Image or Gallery Section */}
             <div className="w-full md:w-1/2">
-              <img
-                src={section.image}
-                alt={section.title}
-                className="w-full rounded-lg shadow-lg"
-              />
+              {section.gallery ? (
+                <Gallery images={section.gallery} />
+              ) : (
+                <img
+                  src={section.image}
+                  alt={section.title}
+                  className="w-full rounded-lg shadow-lg"
+                />
+              )}
             </div>
           </div>
         ))}
