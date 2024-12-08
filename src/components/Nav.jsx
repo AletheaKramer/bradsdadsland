@@ -41,15 +41,18 @@ const Nav = () => {
           <Link to="/" className="hover:text-beigeSecondary text-lg">
             Campsite
           </Link>
+          <Link to="/amenities" className="hover:text-beigeSecondary text-lg">
+            Amenities
+          </Link>
+          <Link to="/policies" className="hover:text-beigeSecondary text-lg">
+            Policies
+          </Link>
           <Link to="/pricing" className="hover:text-beigeSecondary text-lg">
             Pricing
           </Link>
-          <a href="/policies" className="hover:text-beigeSecondary text-lg">
-            Policies
-          </a>
-          <a href="/contact" className="hover:text-beigeSecondary text-lg">
+          <Link to="/contact" className="hover:text-beigeSecondary text-lg">
             Contact
-          </a>
+          </Link>
         </div>
       </div>
 
@@ -66,26 +69,33 @@ const Nav = () => {
                 Campsite
               </Link>
               <Link
+                to="/amenities"
+                className="block text-xl font-sans text-brownPrimary hover:text-beigeSecondary"
+                onClick={() => setIsOpen(false)}
+              >
+                Amenities
+              </Link>
+              <Link
+                to="/policies"
+                className="block text-xl font-sans text-brownPrimary hover:text-beigeSecondary"
+                onClick={() => setIsOpen(false)}
+              >
+                Policies
+              </Link>
+              <Link
                 to="/pricing"
                 className="block text-xl font-sans text-brownPrimary hover:text-beigeSecondary"
                 onClick={() => setIsOpen(false)}
               >
                 Pricing
               </Link>
-              <a
-                href="/policies"
-                className="block text-xl font-sans text-brownPrimary hover:text-beigeSecondary"
-                onClick={() => setIsOpen(false)}
-              >
-                Policies
-              </a>
-              <a
-                href="/#contact"
+              <Link
+                to="/contact"
                 className="block text-xl font-sans text-brownPrimary hover:text-beigeSecondary"
                 onClick={() => setIsOpen(false)}
               >
                 Contact
-              </a>
+              </Link>
             </div>
           </div>
         </div>
