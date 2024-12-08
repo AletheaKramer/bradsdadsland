@@ -7,6 +7,7 @@ import outhouse from "../assets/outhouse.svg";
 import shower from "../assets/shower.svg";
 import playground from "../assets/playground.svg";
 import Icon from "./Icon";
+import Gallery from "./Gallery";
 import CampsitePic from "../assets/campsite.jpg";
 
 const Campsite = () => {
@@ -58,11 +59,12 @@ const Campsite = () => {
         />
       </div>
       <div>
-        <img
+        {/* <img
           src={CampsitePic}
           alt="Campsite"
           className="object-cover w-full rounded-[2rem]"
-        ></img>
+        ></img> */}
+        <Gallery />
       </div>
     </div>
   );

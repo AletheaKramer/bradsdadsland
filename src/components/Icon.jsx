@@ -19,4 +19,24 @@ const Icon = ({ src, alt, label }) => {
   );
 };
 
+export const Arrow = ({ direction = "up" }) => {
+  const arrows = {
+    up: "↑",
+    left: "←",
+    right: "→",
+  };
+
+  return (
+    <span
+      className="text-2xl"
+      style={{
+        fontFamily:
+          "-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif",
+      }}
+    >
+      {arrows[direction]}
+    </span>
+  );
+};
+
 export default Icon;
