@@ -7,6 +7,7 @@ import Gallery from "./components/Gallery";
 import Pricing from "./components/Pricing"; 
 import Policies from "./components/Policies"; 
 import ContactUs from "./components/ContactUs"; 
+import Amenities from "./components/Amenities";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"; 
 import { Link } from "react-router-dom"; 
 import { Arrow } from "./components/Icon";
@@ -110,8 +111,9 @@ function App() {
             <Routes>
               <Route path="/" element={<Campsite />} />
               <Route path="/gallery" element={<Gallery />} />
-              <Route path="/pricing" element={<Pricing />} />{" "}
-              <Route path="/policies" element={<Policies />} />{" "}
+              <Route path="/amenities" element={<Amenities />} />
+              <Route path="/policies" element={<Policies />} />
+              <Route path="/pricing" element={<Pricing />} />
               <Route path="/contact" element={<ContactUs />} />
             </Routes>
           </div>
