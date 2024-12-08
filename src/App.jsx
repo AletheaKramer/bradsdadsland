@@ -4,10 +4,11 @@ import bradsdadsland from "./assets/logo.gif";
 import Nav from "./components/Nav.jsx";
 import Campsite from "./components/Campsite";
 import Gallery from "./components/Gallery";
-import Pricing from "./components/Pricing"; // Import the new Pricing component
-import Policies from "./components/Policies"; // Import the new Policies component
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom"; // Import React Router
-import { Link } from "react-router-dom"; // Import Link for navigation
+import Pricing from "./components/Pricing"; 
+import Policies from "./components/Policies"; 
+import ContactUs from "./components/ContactUs"; 
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"; 
+import { Link } from "react-router-dom"; 
 import { Arrow } from "./components/Icon";
 
 function App() {
@@ -110,9 +111,8 @@ function App() {
               <Route path="/" element={<Campsite />} />
               <Route path="/gallery" element={<Gallery />} />
               <Route path="/pricing" element={<Pricing />} />{" "}
-              {/* Add Pricing Route */}
               <Route path="/policies" element={<Policies />} />{" "}
-              {/* Add Policies Route */}
+              <Route path="/contact" element={<ContactUs />} />
             </Routes>
           </div>
         </div>
