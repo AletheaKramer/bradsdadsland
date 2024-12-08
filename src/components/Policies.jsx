@@ -1,5 +1,5 @@
 import React from "react";
-import welcomeSignImage from "src/assets/welcome-sign.jpg"; // Updated image file path
+import welcomeSignImage from "../../../bradsdadsland/src/assets/welcome-sign.jpg"; // Updated image file path
 
 const Policies = () => {
   return (
