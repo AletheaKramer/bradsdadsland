@@ -47,12 +47,9 @@ const Nav = () => {
           <Link to="/policies" className="hover:text-beigeSecondary text-lg">
             Policies
           </Link>
-          <Link to="/pricing" className="hover:text-beigeSecondary text-lg">
+          {/* <Link to="/pricing" className="hover:text-beigeSecondary text-lg">
             Pricing
-          </Link>
-          <Link to="/contact" className="hover:text-beigeSecondary text-lg">
-            Contact
-          </Link>
+          </Link> */}
         </div>
       </div>
 
@@ -82,20 +79,13 @@ const Nav = () => {
               >
                 Policies
               </Link>
-              <Link
+              {/* <Link
                 to="/pricing"
                 className="block text-xl font-sans text-brownPrimary hover:text-beigeSecondary"
                 onClick={() => setIsOpen(false)}
               >
                 Pricing
-              </Link>
-              <Link
-                to="/contact"
-                className="block text-xl font-sans text-brownPrimary hover:text-beigeSecondary"
-                onClick={() => setIsOpen(false)}
-              >
-                Contact
-              </Link>
+              </Link> */}
             </div>
           </div>
         </div>
