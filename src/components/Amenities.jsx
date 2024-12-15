@@ -20,68 +20,49 @@ const Amenities = () => {
     {
       title: "Family-Friendly Features",
       description:
-        "Children’s Playground (Fully fenced) with 3 swing sets, 2 rope swings, a tire swing, and a sandbox and tractor at the far end of the campsite.",
-      image: swingsetImage,
+        "Children's Playground (Fully fenced) with 3 swing sets, 2 rope swings, a tire swing, and a sandbox and tractor at the far end of the campsite.",
+      images: [swingsetImage],
     },
     {
-      title: "Sandbox Area",
+      title: "Facilities",
       description:
-        "A fun sandbox and tractor play area for kids, located at the far end of the campsite, perfect for younger campers.",
-      image: sandboxImage,
+        "Modern indoor facilities including flush toilets, showers, and convenient recycling and garbage facilities.",
+      images: [toiletsImage, showersImage, recyclingImage],
     },
     {
-      title: "Restroom Facilities",
+      title: "Outhouses & Laundry",
       description:
-        "Indoor facilities include 2 flush toilets, ensuring comfort and cleanliness during your stay.",
-      image: toiletsImage,
-    },
-    {
-      title: "Showers",
-      description:
-        "Coin-operated showers include a child-friendly showerhead at 3 feet high and a standard showerhead at 6 feet high.",
-      image: showersImage,
-    },
-    {
-      title: "Outhouses",
-      description:
-        "8 very clean outhouses located conveniently around the campsite to serve all guests.",
-      gallery: [outhouseOneImage, outhouseTwoImage],
-    },
-    {
-      title: "Laundry Facility",
-      description:
-        "On-site laundry machines make it easy to stay fresh during extended stays.",
-      gallery: [laundryOneImage, laundryTwoImage],
-    },
-    {
-      title: "Recycling, Garbage & Freezer Room",
-      description:
-        "A dedicated recycling and garbage facility with freezer storage options for your convenience.",
-      image: recyclingImage,
+        "8 clean outhouses located around the campsite, plus on-site laundry facilities for extended stays.",
+      images: [
+        outhouseOneImage,
+        outhouseTwoImage,
+        laundryOneImage,
+        laundryTwoImage,
+      ],
     },
     {
       title: "Reception Office and General Store",
       description:
         "A welcoming office and store stocked with camping essentials to make your stay comfortable.",
-      image: officeStoreImage,
+      images: [officeStoreImage],
     },
     {
       title: "Cape Cod Chairs",
       description:
         "Relax with our Cape Cod chairs along the waterfront, perfect for unwinding and enjoying the views.",
-      image: capeCodImage,
+      images: [capeCodImage],
     },
     {
       title: "Beach Access",
       description:
         "Enjoy 1,000 feet of oceanfront and easy access to the beach, providing breathtaking views and relaxation.",
-      gallery: [beachAccessOneImage, beachAccessTwoImage],
+      images: [beachAccessOneImage, beachAccessTwoImage],
     },
     {
       title: "Oceanfront Views",
       description:
         "Immerse yourself in the stunning oceanfront scenery, perfect for creating lasting memories.",
-      image: oceanfrontImage,
+      images: [oceanfrontImage],
     },
   ];
 
@@ -103,17 +84,9 @@ const Amenities = () => {
               </h3>
               <p className="text-lg text-beigePrimary">{section.description}</p>
             </div>
-            {/* Image or Gallery Section */}
+            {/* Gallery Section */}
             <div className="w-full md:w-1/2">
-              {section.gallery ? (
-                <Gallery images={section.gallery} />
-              ) : (
-                <img
-                  src={section.image}
-                  alt={section.title}
-                  className="object-cover w-full h-80 rounded-lg shadow-lg"
-                />
-              )}
+              <Gallery images={section.images} />
             </div>
           </div>
         ))}
