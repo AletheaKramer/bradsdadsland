@@ -17,7 +17,7 @@ const Footer = () => {
                   href="tel:+12503350757"
                   className="hover:text-beigeSecondary transition"
                 >
-                  (250) 335-0757
+                  (250) 650-1310
                 </a>
               </p>
             </div>
