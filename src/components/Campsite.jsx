@@ -25,7 +25,7 @@ const Campsite = () => {
             </h3>
             <p className="text-beigeSecondary text-large mt-8">
               Our campsite is designed to make your stay as comfortable as it is
-              memorable, offering fully serviced 50 & 30 amp sites with
+              memorable, offering fully serviced 15, 30 and 50 amp sites with
               everything you need to unwind and reconnect with nature.
             </p>
           </div>
