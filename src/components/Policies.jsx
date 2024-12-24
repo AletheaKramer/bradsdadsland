@@ -45,7 +45,7 @@ const Policies = () => {
         </ul>
 
         <h3 className="text-2xl font-semibold mt-6">
-          Glamping, Vintage T and RV Rentals:
+          Glamping and RV Rentals:
         </h3>
         <ul className="list-disc list-inside text-lg">
           <li>
