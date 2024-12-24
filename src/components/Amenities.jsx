@@ -20,7 +20,7 @@ const Amenities = () => {
     {
       title: "Family-Friendly Features",
       description:
-        "Children's Playground (Fully fenced) with 3 swing sets, 2 rope swings, a tire swing, and a sandbox and tractor at the far end of the campsite.",
+        "Children's Playground (fully fenced) with 3 swings, a sandbox, and a tractor at the far end of the campsite.",
       images: [swingsetImage],
     },
     {
