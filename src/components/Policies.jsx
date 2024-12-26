@@ -123,7 +123,7 @@ const Policies = () => {
         </h3>
         <p className="text-lg">
           Guests returning annually on the same date and site may reserve up to
-          two years in advance. ROFR reservations require compliance with the
+          one year in advance. ROFR reservations require compliance with the
           cancellation policy.
         </p>
 
