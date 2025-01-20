@@ -27,9 +27,9 @@ const Footer = () => {
           <div>
             <h3 className="text-xl font-semibold mb-4">Camping Options</h3>
             <div className="space-y-2">
-              <p>Tent Sites</p>
+              <p>Tenting</p>
               <p>RV Camping</p>
-              <p>Seasonal Rates Available</p>
+              <p>Snowbird Accommodation</p>
               <p>Family-Friendly Environment</p>
             </div>
           </div>
@@ -50,7 +50,7 @@ const Footer = () => {
               </p>
               <p>
                 <a
-                  href="https://www.google.com/search?q=bradsdadsland+campsite&oq=bradsdadsland+campsite"
+                  href="https://www.google.com/maps/place/Bradsdadsland+Campsite/@49.5334248,-124.7103867,16.96z/data=!4m9!3m8!1s0x548865902f2f9ac5:0x7000770310fbfc89!5m2!4m1!1i2!8m2!3d49.5339837!4d-124.7100764!16s%2Fg%2F1tg9mv36?entry=ttu&g_ep=EgoyMDI1MDExNS4wIKXMDSoASAFQAw%3D%3D"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-beigeSecondary transition"

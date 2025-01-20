@@ -20,34 +20,34 @@ const Campsite = () => {
               Comfort Meets Nature’s Charm
             </h2>
             <h3 className="text-beigePrimary text-4xl">
-              Discover a retreat that marries rustic charm with modern
+              Discover a retreat that marries rustic character with modern
               conveniences
             </h3>
             <p className="text-beigeSecondary text-large mt-8">
               Our campsite is designed to make your stay as comfortable as it is
-              memorable, offering fully serviced 15, 30 and 50 amp sites with
-              everything you need to unwind and reconnect with nature.
+              memorable, offering serviced 15, 30 and 50 amp sites with
+              what you need to unwind and reconnect with nature.
             </p>
           </div>
 
           <div className="grid grid-cols-2 lg:gap-8 lg:pt-16 pt-4">
             <Icon src={beach} alt="Beach access" label="Beach access" />
-            <Icon src={freezer} alt="Freezer access" label="Freezer access" />
+            <Icon src={freezer} alt="Freezer space" label="Freezer space" />
             <Icon
               src={laundry}
-              alt="Laundry facility"
-              label="Laundry facility"
+              alt="Laundromat"
+              label="Laundromat"
             />
             <Icon
               src={outhouse}
-              alt="Clean outhouses"
-              label="Clean outhouses"
+              alt="Washrooms"
+              label="Washrooms"
             />
-            <Icon src={shower} alt="Indoor showers" label="Indoor showers" />
+            <Icon src={shower} alt="Showers" label="Showers" />
             <Icon
               src={playground}
-              alt="Children's playground"
-              label="Children's playground"
+              alt="Playground"
+              label="Playground"
             />
           </div>
         </div>
