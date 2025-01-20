@@ -27,9 +27,9 @@ const Footer = () => {
           <div>
             <h3 className="text-xl font-semibold mb-4">Camping Options</h3>
             <div className="space-y-2">
-              <p>Tent Sites</p>
+              <p>Tenting</p>
               <p>RV Camping</p>
-              <p>Seasonal Rates Available</p>
+              <p>Snowbird Accommodation</p>
               <p>Family-Friendly Environment</p>
             </div>
           </div>
@@ -40,7 +40,7 @@ const Footer = () => {
             <div className="space-y-2">
               <p>
                 <a
-                  href="https://www.google.com/maps/place/Bradsdadsland+Campsite/@49.5174017,-124.6419995,17z/data=!3m1!4b1!4m6!3m5!1s0x5487f1f0a3f0bb7b:0x8f3a798b90b1f5b7!8m2!3d49.5173982!4d-124.6394246!16s%2Fg%2F11h_yt_43h?entry=ttu"
+                  href="https://www.google.com/maps/place/Bradsdadsland+Campsite/data=!4m2!3m1!1s0x0:0x7000770310fbfc89?sa=X&ved=1t:2428&ictx=111"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-beigeSecondary transition"
@@ -50,7 +50,7 @@ const Footer = () => {
               </p>
               <p>
                 <a
-                  href="https://www.google.com/search?q=bradsdadsland+campsite&oq=bradsdadsland+campsite"
+                  href="https://www.google.com/maps/place/Bradsdadsland+Campsite/@49.532616,-124.7109708,16.53z/data=!4m11!3m10!1s0x548865902f2f9ac5:0x7000770310fbfc89!5m2!4m1!1i2!8m2!3d49.5339837!4d-124.7100764!9m1!1b1!16s%2Fg%2F1tg9mv36?entry=ttu&g_ep=EgoyMDI1MDExNS4wIKXMDSoASAFQAw%3D%3D"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-beigeSecondary transition"
