@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
-import heroImage from "./assets/views.jpg";
+import heroImage from "./assets/HeroImage.jpg";
 import bradsdadsland from "./assets/logo.gif";
 import Nav from "./components/Nav.jsx";
 import Campsite from "./components/Campsite";
