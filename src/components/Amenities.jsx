@@ -26,7 +26,7 @@ const Amenities = () => {
     {
       title: "Facilities",
       description:
-        "Modern indoor facilities including flush toilets, showers, and convenient recycling and garbage facilities.",
+        "Modern indoor facilities including flush toilets, coin-operated showers, and convenient recycling and garbage facilities.",
       images: [toiletsImage, showersImage, recyclingImage],
     },
     {

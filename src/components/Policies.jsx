@@ -1,5 +1,5 @@
 import React from "react";
-import welcomeSignImage from "../assets/welcome-sign.jpg"; // Updated image file path
+import policiesPageImage from "../assets/PoliciesPage.jpg"; // Updated image file path
 
 const Policies = () => {
   return (
@@ -24,48 +24,108 @@ const Policies = () => {
         {/* New Image Section */}
         <div className="mt-6">
           <img
-            src={welcomeSignImage}
-            alt="Welcome Sign"
+            src={policiesPageImage}
+            alt="Beautiful landscape of Bradsdadsland"
             className="w-full rounded-lg shadow-lg"
           />
         </div>
 
         <h3 className="text-2xl font-semibold mt-6">General Policies:</h3>
         <ul className="list-disc list-inside text-lg">
-          <li>Reservations recommended during summer months.</li>
-          <li>Open online starting April 1 for the following year.</li>
+          <li>Reservations are highly recommended during summer months.</li>
           <li>
-            Base rate includes one Primary Camping Party (e.g., a single family
-            unit).
+            A deposit is required for a guaranteed reservation. During the off-season, 
+            the deposit is one night of the basic rate for each site you book. During the Regular 
+            and Peak season, the deposit is equal to two nights of the basic rate for each 
+            week and each site you book. The deposit equal to one night fee is non-refundable, 
+            please be sure before booking and see cancellation policy. Deposit is based on 
+            basic site rate and does not include services. Services on a site will be charged 
+            as listed below whether you use it or not.
           </li>
           <li>
-            Provide details at booking: number of vehicles, adults, children,
-            and type of accommodations.
+            Services are available on select sites, inquire for information. Service includes:
+            <ul className="list-disc pl-6">
+              <li>15 amp Partial service (no sewer)</li>
+              <li>30 amp Partial service (no sewer)</li>
+              <li>Sewer dump available under fee to registered campers only (on minimum stay of 3 nights).</li>
+              <li>Sites with power meters have an additional charge of $0.30/kWh after the first 10kWh.</li>
+            </ul>
+          </li>
+          <li>
+            Freezer tote-box service available for $2.00 per night. $20.00 key security deposit required.
+          </li>
+          <li>
+            The first member of a party to arrive must check-in and register with a valid credit card before setting up. 
+            The full balance is due for the entire stay prior to setting up in the campsite. It is your responsibility to 
+            inform us and pay for any additional fees due as listed below, for extra people and pets, under “Daily Rates per Campsite.”
+          </li>
+          <li>
+            Each pet is charged a base fee of $8/day up to a maximum of 3 pets per site 
+            (must be kept on a leash at all times and locations, even within your site, 
+            and cleaned after; a full fee will be charged if not complied with - double the base pet fee).
+          </li>
+          <li>
+            The base rate for RV/Tent sites covers 2 adults and 2 children. 
+            Anything above is charged additionally regardless of occupancy, up to a maximum of 8 people.
           </li>
         </ul>
 
-        <h3 className="text-2xl font-semibold mt-6">
-          Glamping and RV Rentals:
-        </h3>
+        <h3 className="text-2xl font-semibold mt-6">Cancellation Policy:</h3>
         <ul className="list-disc list-inside text-lg">
           <li>
-            50% non-refundable deposit required at booking; balance charged 60
-            days before arrival.
+            Cancellations made **0-13 days prior** to arrival date will be charged a **two-night stay**.
           </li>
-          <li>Maximum occupancy: 8 people.</li>
-          <li>No pets allowed. $50 cleaning fee due on arrival.</li>
+          <li>
+            Cancellations made **14 days or more prior** to arrival date will be charged a **one-night stay**.
+          </li>
+          <li>
+            We require **14 DAYS NOTICE** to cancel, reschedule, or change your reservation. You may change 
+            or transfer your reservation to any other site and/or date available during the same year. 
+            Prepayments are **NOT** transferable from year to year.
+          </li>
+          <li>
+            You can cancel or change your reservation online by clicking on your reservation details link 
+            provided by email when you book or within the Campspot App. If you request a cancellation or 
+            change by email, a **$15 fee will be applied**. No cancellations or changes by phone.
+          </li>
+          <li>
+            If you do not contact us or check-in by **noon the day following your scheduled arrival date**, 
+            then your reservation will be automatically cancelled.
+          </li>
         </ul>
 
-        <h3 className="text-2xl font-semibold mt-6">RV Units:</h3>
+        <h3 className="text-2xl font-semibold mt-6">Refund Policy:</h3>
         <ul className="list-disc list-inside text-lg">
           <li>
-            One RV unit allowed per site. Additional RVs incur a fee of 50% of
-            the base rate.
+            If you are due a refund, all refunds will be processed in the original form of purchase.
           </li>
           <li>
-            All equipment must fit on the site or in designated parking areas.
+            You must have a valid credit card on your account for the system to process any refund.
+          </li>
+          <li>
+            You have the choice to keep any refund as a **credit** on your account or have it processed back to the credit card on file.
+          </li>
+          <li>
+            Sometimes the system may send the balance automatically to your account as **User Credit** when 
+            the cancellation is made by the office. In that case, you can keep it as a credit or have it refunded back to your card.
+          </li>
+          <li>
+            You can cancel or change your reservation online. Any change or cancellation request **made by email** 
+            will be charged a **$15 fee**. **No changes or cancellations by phone.**
+          </li>
+          <li>
+            No refunds on **partial cancellations before, on, or after arrival**.
           </li>
         </ul>
+
+        <h3 className="text-2xl font-semibold mt-6">Check-in & Check-out Times:</h3>
+        <ul className="list-disc list-inside text-lg">
+          <li>Check-in: **1:00 PM**</li>
+          <li>Check-out: **11:00 AM**</li>
+          <li>Glamping and Vintage Trailers Check-in: **4:00 PM**</li>
+          <li>Glamping and Vintage Trailers Check-out: **11:00 AM**</li>
+        </ul>
+
 
         <h3 className="text-2xl font-semibold mt-6">Power and Sewer:</h3>
         <ul className="list-disc list-inside text-lg">
@@ -146,7 +206,12 @@ const Policies = () => {
           >
             250-650-1310
           </a>{" "}
-          or email for inquiries.
+          or <a
+                  href="mailto:bradsdadsland@telus.net"
+                  className="underline hover:text-beigeSecondary transition" 
+                >
+                  email
+                </a> for inquiries.
           <br />
           We look forward to hosting you!
         </p>
