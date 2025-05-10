@@ -1,11 +1,12 @@
 import React, { useEffect, useState, useRef } from "react";
-import heroImage from "./assets/HeroImage.jpg";
+import heroImage from "./assets/HeroImage.png";
 import bradsdadsland from "./assets/logo.gif";
 import Nav from "./components/Nav.jsx";
 import Campsite from "./components/Campsite";
 import Gallery from "./components/Gallery";
 import Policies from "./components/Policies";
 import Amenities from "./components/Amenities";
+import ROFR from './components/ROFR';
 import { Routes, Route, useLocation, Link } from "react-router-dom";
 import { Arrow } from "./components/Icon";
 import Footer from "./components/Footer";
@@ -45,6 +46,7 @@ function AppContent() {
       <div className={`p-8 ${isHomePage ? "pb-24" : "pb-12"}`}>
         <div className="max-w-[1500px] mx-auto">
           <div className="flex justify-between">
+            {/* Left: Logo + Tagline */}
             <div>
               <Link to="/">
                 <img
@@ -55,22 +57,26 @@ function AppContent() {
                   }`}
                 />
               </Link>
-              <h1
-                className={`font-sans text-xl w-40 lg:text-2xl lg:w-56 ml-4 ${
-                  isHomePage ? "mb-8 mt-4" : "mb-4 mt-2"
-                } tracking-wide text-brownPrimary`}
-              >
-                Camping from days gone by
-              </h1>
+              <div className="ml-4">
+                <h1
+                  className={`font-sans text-xl w-40 lg:text-2xl lg:w-56 ${
+                    isHomePage ? "mt-4 mb-2" : "mt-2 mb-1"
+                  } tracking-wide text-brownPrimary`}
+                >
+                  Camping from days gone by
+                </h1>
+              </div>
             </div>
 
-            <div className="relative">
+            {/* Right: Nav + Notice + Button */}
+            <div className="relative flex flex-col items-end">
               <Nav />
+              <p className="text-s text-brownPrimary mt-2 mb-1 pr-1">
+                Reservations open on January 2nd – online only.
+              </p>
               <button
                 ref={headerButtonRef}
-                className={`absolute bottom-0 right-0 ${
-                  isHomePage ? "mb-8" : "mb-4"
-                } text-sm md:text-md lg:text-lg xl:text-xl px-4 md:px-6 lg:px-8 py-1 md:py-2 lg:py-3 border border-brownPrimary rounded-full font-sans font-medium text-brownPrimary hover:bg-brownPrimary hover:text-beigePrimary transition whitespace-nowrap`}
+                className={`text-sm md:text-md lg:text-lg xl:text-xl px-4 md:px-6 lg:px-8 py-1 md:py-2 lg:py-3 border border-brownPrimary rounded-full font-sans font-medium text-brownPrimary hover:bg-brownPrimary hover:text-beigePrimary transition whitespace-nowrap`}
                 onClick={() =>
                   window.open(
                     "https://www.campspot.com/book/bradsdadsland",
@@ -83,7 +89,7 @@ function AppContent() {
             </div>
           </div>
 
-          {/* Hero Section - Only show on home page */}
+          {/* Hero Section - Only on home page */}
           {isHomePage && (
             <div className="relative w-full border rounded-lg overflow-hidden h-[calc(100vh-12rem)] lg:h-[calc(100vh-4rem)]">
               <img
@@ -121,7 +127,7 @@ function AppContent() {
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/amenities" element={<Amenities />} />
             <Route path="/policies" element={<Policies />} />
-            {/* <Route path="/pricing" element={<Pricing />} /> */}
+            <Route path="/rofr" element={<ROFR />} />
           </Routes>
         </div>
       </div>
