@@ -38,8 +38,8 @@ const Nav = () => {
       {/* Desktop menu */}
       <div className="hidden md:flex justify-between items-center">
         <div className="flex space-x-16 font-sans font-medium text-brownPrimary">
-          <Link to="/" className="hover:text-beigeSecondary text-lg">
-            Campsite
+          <Link to="/gallery" className="hover:text-beigeSecondary text-lg">
+            Gallery
           </Link>
           <Link to="/amenities" className="hover:text-beigeSecondary text-lg">
             Amenities
@@ -47,49 +47,44 @@ const Nav = () => {
           <Link to="/policies" className="hover:text-beigeSecondary text-lg">
             Policies
           </Link>
-          <Link to="/rofr" className="hover:text-beigeSecondary">
-          Join our ROFR Program
+          <Link to="/rofr" className="hover:text-beigeSecondary text-lg">
+            Join our ROFR Program
           </Link>
-          {/* <Link to="/pricing" className="hover:text-beigeSecondary text-lg">
-            Pricing
-          </Link> */}
         </div>
       </div>
 
       {/* Mobile dropdown menu */}
       {isOpen && (
         <div className="absolute right-0 top-12 w-64 bg-beigePrimary shadow-lg z-50 md:hidden">
-          <div className="p-6">
-            <div className="space-y-6">
-              <Link
-                to="/"
-                className="block text-xl font-sans text-brownPrimary hover:text-beigeSecondary"
-                onClick={() => setIsOpen(false)}
-              >
-                Campsite
-              </Link>
-              <Link
-                to="/amenities"
-                className="block text-xl font-sans text-brownPrimary hover:text-beigeSecondary"
-                onClick={() => setIsOpen(false)}
-              >
-                Amenities
-              </Link>
-              <Link
-                to="/policies"
-                className="block text-xl font-sans text-brownPrimary hover:text-beigeSecondary"
-                onClick={() => setIsOpen(false)}
-              >
-                Policies
-              </Link>
-              {/* <Link
-                to="/pricing"
-                className="block text-xl font-sans text-brownPrimary hover:text-beigeSecondary"
-                onClick={() => setIsOpen(false)}
-              >
-                Pricing
-              </Link> */}
-            </div>
+          <div className="p-6 space-y-6">
+            <Link
+              to="/gallery"
+              className="block text-xl font-sans text-brownPrimary hover:text-beigeSecondary"
+              onClick={() => setIsOpen(false)}
+            >
+              Gallery
+            </Link>
+            <Link
+              to="/amenities"
+              className="block text-xl font-sans text-brownPrimary hover:text-beigeSecondary"
+              onClick={() => setIsOpen(false)}
+            >
+              Amenities
+            </Link>
+            <Link
+              to="/policies"
+              className="block text-xl font-sans text-brownPrimary hover:text-beigeSecondary"
+              onClick={() => setIsOpen(false)}
+            >
+              Policies
+            </Link>
+            <Link
+              to="/rofr"
+              className="block text-xl font-sans text-brownPrimary hover:text-beigeSecondary"
+              onClick={() => setIsOpen(false)}
+            >
+              Join our ROFR Program
+            </Link>
           </div>
         </div>
       )}

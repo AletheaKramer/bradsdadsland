@@ -2,17 +2,15 @@ import React from "react";
 import rofrImage from "../assets/ROFR.jpg";
 
 const ROFR = () => (
-  <div className="bg-beigePrimary max-w-[1500px] mx-auto font-sans p-8 text-brownPrimary">
-    {/* Top banner image */}
+  <div className="bg-brownPrimary min-h-screen p-8 text-beigePrimary font-sans">
+    {/* Banner image */}
     <img
       src={rofrImage}
       alt="Right of First Refusal Program"
       className="w-full max-h-96 object-cover mb-6 rounded-lg"
     />
 
-    <h2 className="text-4xl font-bold mb-6">
-      Right of First Refusal Program (Join our ROFR)
-    </h2>
+    <h2 className="text-4xl font-bold mb-6">Right of First Refusal Program (Join our ROFR)</h2>
 
     <p className="text-lg mb-4">
       Bradsdadsland Campground has been a beloved destination since 1981, and
@@ -40,7 +38,7 @@ const ROFR = () => (
         After the summer season, eligible guests need to express interest in
         staying enrolled by submitting their request via email between
         September 10th and December 20th of the prior year. Please note:
-        reservations cannot be made via phone or in-person at the office.
+        reservations cannot be made via phone or in‑person at the office.
       </li>
       <li>
         After processing, all sites will become available to the public on

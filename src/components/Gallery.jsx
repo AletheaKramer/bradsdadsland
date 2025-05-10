@@ -1,143 +1,147 @@
-import React, { useState } from "react";
-import { Arrow } from "./Icon";
+// src/pages/Gallery.jsx
+import React, { useState, useEffect } from "react";
+import { Arrow } from "../components/Icon";
 
-const Gallery = ({ images = [] }) => {
-  const [showMore, setShowMore] = useState(false);
-  const hasMultipleImages = images.length > 1;
+import CapeCode1    from "../assets/CapeCode1.jpg";
+import CapeCode2    from "../assets/CapeCode2.jpg";
+import CapeCode3    from "../assets/CapeCode3.jpg";
+import FFF1         from "../assets/FFF1.jpg";
+import FFF2         from "../assets/FFF2.jpg";
+import FFF3         from "../assets/FFF3.jpg";
+import Facilities1  from "../assets/Facilities1.jpg";
+import Facilities2  from "../assets/Facilities2.jpg";
+import Facilities3  from "../assets/Facilities3.jpg";
+import Facilities4  from "../assets/Facilities4.jpg";
+import Laundry1     from "../assets/Laundry1.jpg";
+import Laundry2     from "../assets/Laundry2.jpg";
+import Ocean1       from "../assets/Ocean1.jpg";
+import Ocean2       from "../assets/Ocean2.jpg";
+import Ocean3       from "../assets/Ocean3.jpg";
+import Ocean4       from "../assets/Ocean4.jpg";
+import Ocean5       from "../assets/Ocean5.jpg";
+import Ocean6       from "../assets/Ocean6.jpg";
+import Office1      from "../assets/Office1.jpg";
+import Office2      from "../assets/Office2.jpg";
+import Office3   from "../assets/Office3.jpg";
+import Office4      from "../assets/Office4.jpg";
+import Outhouse1    from "../assets/Outhouse1.jpg";
+import Outhouse2    from "../assets/Outhouse2.jpg";
+import Outhouse3    from "../assets/Outhouse3.jpg";
+import Outhouse4    from "../assets/Outhouse4.jpg";
+import PoliciesImg  from "../assets/Policies.jpg";
+import ROFRImg      from "../assets/ROFR.jpg";
+import Recycling1   from "../assets/Recycling1.jpg";
+import Recycling2   from "../assets/Recycling2.jpg";
+import Recycling3   from "../assets/Recycling3.jpg";
 
-  // For exactly two images, show one full-width image at a time
-  if (images.length === 2) {
-    return (
-      <div className="relative overflow-hidden max-w-[1000px] mx-auto">
-        <div
-          className="flex transition-transform duration-500 ease-in-out"
-          style={{
-            transform: showMore ? "translateX(-100%)" : "translateX(0)",
-          }}
-        >
-          {/* First Image */}
-          <div className="flex-none w-full">
-            <div className="flex flex-col lg:flex-row gap-4 p-4">
-              <img
-                src={images[0]}
-                alt="Gallery image 1"
-                className="object-cover w-full rounded-[2rem] h-[400px]"
-              />
-            </div>
-          </div>
+const images = [
+  CapeCode1, CapeCode2, CapeCode3,
+  FFF1, FFF2, FFF3,
+  Facilities1, Facilities2, Facilities3, Facilities4,
+  Laundry1, Laundry2,
+  Ocean1, Ocean2, Ocean3, Ocean4, Ocean5, Ocean6,
+  Office1, Office2, Office3, Office4,
+  Outhouse1, Outhouse2, Outhouse3, Outhouse4,
+  PoliciesImg, ROFRImg,
+  Recycling1, Recycling2, Recycling3,
+];
 
-          {/* Second Image */}
-          <div className="flex-none w-full">
-            <div className="flex flex-col lg:flex-row gap-4 p-4">
-              <img
-                src={images[1]}
-                alt="Gallery image 2"
-                className="object-cover w-full rounded-[2rem] h-[400px]"
-              />
-            </div>
-          </div>
-        </div>
+export default function GalleryPage() {
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
-        <div className="absolute top-1/2 -translate-y-1/2 right-12 lg:right-16">
-          <button
-            onClick={() => setShowMore(!showMore)}
-            className="w-12 h-12 rounded-full bg-beigePrimary text-brownPrimary shadow-lg flex items-center justify-center hover:bg-peach hover:text-white transition"
-            aria-label={showMore ? "Previous" : "Next"}
-          >
-            <Arrow direction={showMore ? "left" : "right"} />
-          </button>
-        </div>
+  const openLightbox = (idx) => {
+    setCurrentIndex(idx);
+    setLightboxOpen(true);
+  };
 
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2">
-          <div
-            className={`h-2 w-2 rounded-full transition-colors duration-300 ${
-              !showMore ? "bg-beigePrimary" : "bg-beigePrimary/50"
-            }`}
-          />
-          <div
-            className={`h-2 w-2 rounded-full transition-colors duration-300 ${
-              showMore ? "bg-beigePrimary" : "bg-beigePrimary/50"
-            }`}
-          />
-        </div>
-      </div>
-    );
-  }
+  const closeLightbox = () => setLightboxOpen(false);
+  const prevImage   = () => setCurrentIndex(i => (i + images.length - 1) % images.length);
+  const nextImage   = () => setCurrentIndex(i => (i + 1) % images.length);
 
-  // For all other cases (1, 3, 4, or more images)
-  const renderImageSet = (imageSet) => {
-    if (!imageSet?.length) return null;
+  useEffect(() => {
+    const handleEsc = (e) => e.key === "Escape" && closeLightbox();
+    window.addEventListener("keydown", handleEsc);
+    return () => window.removeEventListener("keydown", handleEsc);
+  }, []);
 
-    return (
-      <div className="flex flex-col lg:flex-row gap-4 p-4">
-        {imageSet.map((image, idx) => (
+  return (
+    <div className="bg-brownPrimary p-8 max-w-[1500px] mx-auto">
+      <h2 className="text-4xl font-bold mb-6 text-beigeSecondary">Gallery</h2>
+
+      {/* Thumbnail grid */}
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+        {images.map((src, idx) => (
           <img
             key={idx}
-            src={image}
-            alt={`Gallery image ${idx + 1}`}
-            className={`object-cover w-full rounded-[2rem] h-[400px] ${
-              imageSet.length === 1
-                ? "lg:w-full"
-                : idx === 0
-                ? "lg:w-4/12"
-                : "lg:w-8/12"
-            }`}
+            src={src}
+            alt={`Gallery ${idx + 1}`}
+            className="cursor-pointer w-full h-32 object-cover rounded-md"
+            onClick={() => openLightbox(idx)}
           />
         ))}
       </div>
-    );
-  };
 
-  // Split images into pairs for 3+ images
-  const firstSet = images.slice(0, 2);
-  const secondSet = images.slice(2);
-  const hasSecondSet = secondSet.length > 0;
-
-  return (
-    <div className="relative overflow-hidden max-w-[1000px] mx-auto">
-      <div
-        className="flex transition-transform duration-500 ease-in-out"
-        style={{ transform: showMore ? "translateX(-100%)" : "translateX(0)" }}
-      >
-        {/* First set of images */}
-        <div className="flex-none w-full">{renderImageSet(firstSet)}</div>
-
-        {/* Second set of images */}
-        {hasSecondSet && (
-          <div className="flex-none w-full">{renderImageSet(secondSet)}</div>
-        )}
-      </div>
-
-      {/* Navigation button - only show if there's more than one set */}
-      {hasSecondSet && (
-        <div className="absolute top-1/2 -translate-y-1/2 right-12 lg:right-16">
+      {/* Lightbox */}
+      {lightboxOpen && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-80 flex flex-col items-center justify-center z-50"
+          onClick={closeLightbox}
+        >
           <button
-            onClick={() => setShowMore(!showMore)}
-            className="w-12 h-12 rounded-full bg-beigePrimary text-brownPrimary shadow-lg flex items-center justify-center hover:bg-peach hover:text-white transition"
-            aria-label={showMore ? "Previous" : "Next"}
+            className="absolute top-4 right-4 text-white text-3xl"
+            onClick={closeLightbox}
+            aria-label="Close"
           >
-            <Arrow direction={showMore ? "left" : "right"} />
+            ×
           </button>
-        </div>
-      )}
 
-      {/* Dots indicator - only show if there's a second set */}
-      {hasSecondSet && (
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2">
+          {/* Main image container */}
           <div
-            className={`h-2 w-2 rounded-full transition-colors duration-300 ${
-              !showMore ? "bg-beigePrimary" : "bg-beigePrimary/50"
-            }`}
-          />
-          <div
-            className={`h-2 w-2 rounded-full transition-colors duration-300 ${
-              showMore ? "bg-beigePrimary" : "bg-beigePrimary/50"
-            }`}
-          />
+            className="relative max-w-[90vw] max-h-[80vh]"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <img
+              src={images[currentIndex]}
+              alt={`Gallery ${currentIndex + 1}`}
+              className="max-w-full max-h-full object-contain rounded-md"
+            />
+            {/* Invisible left half */}
+            <div
+              className="absolute inset-y-0 left-0 w-1/2 cursor-pointer"
+              onClick={prevImage}
+            >
+              <div className="absolute left-2 top-1/2 transform -translate-y-1/2 text-white text-4xl opacity-60 hover:opacity-100 transition-opacity">
+                <Arrow direction="left" />
+              </div>
+            </div>
+            {/* Invisible right half */}
+            <div
+              className="absolute inset-y-0 right-0 w-1/2 cursor-pointer"
+              onClick={nextImage}
+            >
+              <div className="absolute right-2 top-1/2 transform -translate-y-1/2 text-white text-4xl opacity-60 hover:opacity-100 transition-opacity">
+                <Arrow direction="right" />
+              </div>
+            </div>
+          </div>
+
+          {/* Thumbnail strip */}
+          <div className="mt-4 flex overflow-x-auto space-x-2">
+            {images.map((src, idx) => (
+              <img
+                key={idx}
+                src={src}
+                alt={`Thumbnail ${idx + 1}`}
+                className={`w-20 h-12 object-cover rounded-md cursor-pointer border-2 ${
+                  idx === currentIndex ? "border-peach" : "border-transparent"
+                }`}
+                onClick={() => setCurrentIndex(idx)}
+              />
+            ))}
+          </div>
         </div>
       )}
     </div>
   );
-};
-
-export default Gallery;
+}
