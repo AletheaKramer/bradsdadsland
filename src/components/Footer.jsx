@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -11,23 +12,23 @@ const Footer = () => {
             <div className="space-y-2">
               <p>Bradsdadsland Campsite</p>
               <p>2105 Shingle Spit Rd</p>
-              <p>Hornby Island, BC V0R 1Z0</p>
+              <p>Hornby Island, BC V0R 1Z0</p>
               <p className="mt-4">
                 <a
                   href="tel:+12503350757"
                   className="hover:text-beigeSecondary transition"
                 >
-                  (250) 650-1310
+                  (250) 650‑1310
                 </a>
               </p>
               <p className="mt-4">
                 <a
                   href="mailto:bradsdadsland@telus.net"
-                  className="hover:text-beigeSecondary transition" 
+                  className="hover:text-beigeSecondary transition"
                 >
                   bradsdadsland@telus.net
                 </a>
-              </p> 
+              </p>
             </div>
           </div>
 
@@ -65,6 +66,15 @@ const Footer = () => {
                 >
                   Google Reviews
                 </a>
+              </p>
+              {/* New ROFR link */}
+              <p>
+                <Link
+                  to="/rofr"
+                  className="hover:text-beigeSecondary transition"
+                >
+                  Join our ROFR Program
+                </Link>
               </p>
             </div>
           </div>

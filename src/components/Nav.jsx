@@ -47,6 +47,9 @@ const Nav = () => {
           <Link to="/policies" className="hover:text-beigeSecondary text-lg">
             Policies
           </Link>
+          <Link to="/rofr" className="hover:text-beigeSecondary">
+          Join our ROFR Program
+          </Link>
           {/* <Link to="/pricing" className="hover:text-beigeSecondary text-lg">
             Pricing
           </Link> */}
