@@ -76,6 +76,11 @@ const Footer = () => {
                   Join our ROFR Program
                 </Link>
               </p>
+              <p>
+              <Link to="/gallery" className="hover:text-beigeSecondary transition">
+              Gallery
+              </Link>
+              </p>
             </div>
           </div>
         </div>

@@ -58,14 +58,6 @@ const Campsite = () => {
           className="object-cover w-full lg:w-1/2 mt-8 lg:mt-0"
         />
       </div>
-      <div>
-        {/* <img
-          src={CampsitePic}
-          alt="Campsite"
-          className="object-cover w-full rounded-[2rem]"
-        ></img> */}
-        <Gallery />
-      </div>
     </div>
   );
 };
