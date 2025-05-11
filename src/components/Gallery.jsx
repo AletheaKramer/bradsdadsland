@@ -1,4 +1,3 @@
-// src/pages/Gallery.jsx
 import React, { useState, useEffect } from "react";
 import { Arrow } from "../components/Icon";
 
@@ -56,27 +55,17 @@ export default function GalleryPage() {
   };
   const closeLightbox = () => setLightboxOpen(false);
   const prevImage = () =>
-    setCurrentIndex(i => (i - 1 + images.length) % images.length);
+    setCurrentIndex((i) => (i - 1 + images.length) % images.length);
   const nextImage = () =>
-    setCurrentIndex(i => (i + 1) % images.length);
+    setCurrentIndex((i) => (i + 1) % images.length);
 
-  // Keyboard navigation: Esc to close, arrows to navigate
+  // Keyboard navigation
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (!lightboxOpen) return;
-      switch (e.key) {
-        case "Escape":
-          closeLightbox();
-          break;
-        case "ArrowLeft":
-          prevImage();
-          break;
-        case "ArrowRight":
-          nextImage();
-          break;
-        default:
-          break;
-      }
+      if (e.key === "Escape") closeLightbox();
+      if (e.key === "ArrowLeft") prevImage();
+      if (e.key === "ArrowRight") nextImage();
     };
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
@@ -92,6 +81,7 @@ export default function GalleryPage() {
           <img
             key={idx}
             src={src}
+            loading="lazy"
             alt={`Gallery ${idx + 1}`}
             className="cursor-pointer w-full h-32 object-cover rounded-md"
             onClick={() => openLightbox(idx)}
@@ -113,33 +103,32 @@ export default function GalleryPage() {
             ×
           </button>
 
-          {/* Main image container */}
+          {/* Main image */}
           <div
             className="relative max-w-[90vw] max-h-[80vh]"
             onClick={(e) => e.stopPropagation()}
           >
             <img
               src={images[currentIndex]}
+              loading="lazy"
               alt={`Gallery ${currentIndex + 1}`}
               className="max-w-full max-h-full object-contain rounded-md"
             />
-            {/* Left half click zone */}
+            {/* Prev/Next click-zones */}
             <div
               className="absolute inset-y-0 left-0 w-1/2 cursor-pointer"
               onClick={prevImage}
-            >
-              <div className="absolute left-2 top-1/2 transform -translate-y-1/2 text-white text-4xl opacity-60 hover:opacity-100 transition-opacity">
-                <Arrow direction="left" />
-              </div>
-            </div>
-            {/* Right half click zone */}
+            />
             <div
               className="absolute inset-y-0 right-0 w-1/2 cursor-pointer"
               onClick={nextImage}
-            >
-              <div className="absolute right-2 top-1/2 transform -translate-y-1/2 text-white text-4xl opacity-60 hover:opacity-100 transition-opacity">
-                <Arrow direction="right" />
-              </div>
+            />
+            {/* Indicators */}
+            <div className="absolute left-2 top-1/2 transform -translate-y-1/2 text-white text-4xl opacity-60 hover:opacity-100 transition-opacity">
+              <Arrow direction="left" />
+            </div>
+            <div className="absolute right-2 top-1/2 transform -translate-y-1/2 text-white text-4xl opacity-60 hover:opacity-100 transition-opacity">
+              <Arrow direction="right" />
             </div>
           </div>
 
@@ -149,6 +138,7 @@ export default function GalleryPage() {
               <img
                 key={idx}
                 src={src}
+                loading="lazy"
                 alt={`Thumbnail ${idx + 1}`}
                 className={`w-20 h-12 object-cover rounded-md cursor-pointer border-2 ${
                   idx === currentIndex ? "border-peach" : "border-transparent"
