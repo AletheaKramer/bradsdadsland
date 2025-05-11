@@ -22,7 +22,7 @@ import Ocean5       from "../assets/Ocean5.jpg";
 import Ocean6       from "../assets/Ocean6.jpg";
 import Office1      from "../assets/Office1.jpg";
 import Office2      from "../assets/Office2.jpg";
-import Office3   from "../assets/Office3.jpg";
+import Office3      from "../assets/Office3.jpg";
 import Office4      from "../assets/Office4.jpg";
 import Outhouse1    from "../assets/Outhouse1.jpg";
 import Outhouse2    from "../assets/Outhouse2.jpg";
@@ -54,16 +54,33 @@ export default function GalleryPage() {
     setCurrentIndex(idx);
     setLightboxOpen(true);
   };
-
   const closeLightbox = () => setLightboxOpen(false);
-  const prevImage   = () => setCurrentIndex(i => (i + images.length - 1) % images.length);
-  const nextImage   = () => setCurrentIndex(i => (i + 1) % images.length);
+  const prevImage = () =>
+    setCurrentIndex(i => (i - 1 + images.length) % images.length);
+  const nextImage = () =>
+    setCurrentIndex(i => (i + 1) % images.length);
 
+  // Keyboard navigation: Esc to close, arrows to navigate
   useEffect(() => {
-    const handleEsc = (e) => e.key === "Escape" && closeLightbox();
-    window.addEventListener("keydown", handleEsc);
-    return () => window.removeEventListener("keydown", handleEsc);
-  }, []);
+    const handleKeyDown = (e) => {
+      if (!lightboxOpen) return;
+      switch (e.key) {
+        case "Escape":
+          closeLightbox();
+          break;
+        case "ArrowLeft":
+          prevImage();
+          break;
+        case "ArrowRight":
+          nextImage();
+          break;
+        default:
+          break;
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [lightboxOpen]);
 
   return (
     <div className="bg-brownPrimary p-8 max-w-[1500px] mx-auto">
@@ -106,7 +123,7 @@ export default function GalleryPage() {
               alt={`Gallery ${currentIndex + 1}`}
               className="max-w-full max-h-full object-contain rounded-md"
             />
-            {/* Invisible left half */}
+            {/* Left half click zone */}
             <div
               className="absolute inset-y-0 left-0 w-1/2 cursor-pointer"
               onClick={prevImage}
@@ -115,7 +132,7 @@ export default function GalleryPage() {
                 <Arrow direction="left" />
               </div>
             </div>
-            {/* Invisible right half */}
+            {/* Right half click zone */}
             <div
               className="absolute inset-y-0 right-0 w-1/2 cursor-pointer"
               onClick={nextImage}

@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+/*comment*/
 const Footer = () => {
   return (
     <footer className="bg-beigePrimary text-brownPrimary py-12 px-8">
@@ -48,6 +48,11 @@ const Footer = () => {
             <h3 className="text-xl font-semibold mb-4">Quick Links</h3>
             <div className="space-y-2">
               <p>
+              <Link to="/gallery" className="hover:text-beigeSecondary transition">
+              Photo Gallery
+              </Link>
+              </p>
+              <p>
                 <a
                   href="https://www.google.com/maps/place/Bradsdadsland+Campsite/data=!4m2!3m1!1s0x0:0x7000770310fbfc89?sa=X&ved=1t:2428&ictx=111"
                   target="_blank"
@@ -75,11 +80,6 @@ const Footer = () => {
                 >
                   Join our ROFR Program
                 </Link>
-              </p>
-              <p>
-              <Link to="/gallery" className="hover:text-beigeSecondary transition">
-              Gallery
-              </Link>
               </p>
             </div>
           </div>

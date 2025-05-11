@@ -13,11 +13,11 @@ const ImageSlider = ({ images = [] }) => {
   return (
     <div className="relative">
       {/* Single Image */}
-      <div className="w-full h-[400px] overflow-hidden rounded-lg">
+      <div className="w-full h-[400px] overflow-hidden rounded-lg bg-brownPrimary">
         <img
           src={images[current]}
           alt={`Slide ${current + 1}`}
-          className="w-full h-full object-cover"
+          className="w-full h-full object-contain object-center"
         />
       </div>
 
@@ -26,14 +26,14 @@ const ImageSlider = ({ images = [] }) => {
         <>
           <button
             onClick={prevSlide}
-            className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-beigePrimary bg-opacity-50 p-2 rounded-full"
+            className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-beigePrimary bg-opacity-50 p-2 rounded-full text-white"
             aria-label="Previous"
           >
             <Arrow direction="left" />
           </button>
           <button
             onClick={nextSlide}
-            className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-beigePrimary bg-opacity-50 p-2 rounded-full"
+            className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-beigePrimary bg-opacity-50 p-2 rounded-full text-white"
             aria-label="Next"
           >
             <Arrow direction="right" />
