@@ -16,11 +16,6 @@ const ImageSlider = ({ images = [] }) => {
       <div className="w-full h-[400px] overflow-hidden rounded-lg bg-brownPrimary">
         <img
           src={images[current]}
-          srcSet={
-            images[current].replace(/\.jpg$/, "@400w.jpg 400w") +
-            `, ${images[current].replace(/\.jpg$/, "@800w.jpg 800w")}, ${images[current]}`
-          }
-          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 800px"
           loading="lazy"
           alt={`Slide ${current + 1}`}
           className="w-full h-full object-contain object-center"

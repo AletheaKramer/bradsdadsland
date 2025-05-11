@@ -1,42 +1,42 @@
 import React from "react";
 import ImageSlider from "./ImageSlider";
 
-import family1 from "../assets/FFF1.jpg";
-import family2 from "../assets/FFF2.jpg";
-import family3 from "../assets/FFF3.jpg";
+import family1     from "../assets/FFF1.jpg";
+import family2     from "../assets/FFF2.jpg";
+import family3     from "../assets/FFF3.jpg";
 
 import facilities1 from "../assets/Facilities1.jpg";
 import facilities2 from "../assets/Facilities2.jpg";
 import facilities3 from "../assets/Facilities3.jpg";
 import facilities4 from "../assets/Facilities4.jpg";
 
-import outhouse1 from "../assets/Outhouse1.jpg";
-import outhouse2 from "../assets/Outhouse2.jpg";
-import outhouse3 from "../assets/Outhouse3.jpg";
-import outhouse4 from "../assets/Outhouse4.jpg";
+import outhouse1   from "../assets/Outhouse1.jpg";
+import outhouse2   from "../assets/Outhouse2.jpg";
+import outhouse3   from "../assets/Outhouse3.jpg";
+import outhouse4   from "../assets/Outhouse4.jpg";
 
-import laundry1 from "../assets/Laundry1.jpg";
-import laundry2 from "../assets/Laundry2.jpg";
+import laundry1    from "../assets/Laundry1.jpg";
+import laundry2    from "../assets/Laundry2.jpg";
 
-import recycling1 from "../assets/Recycling1.jpg";
-import recycling2 from "../assets/Recycling2.jpg";
-import recycling3 from "../assets/Recycling3.jpg";
+import recycling1  from "../assets/Recycling1.jpg";
+import recycling2  from "../assets/Recycling2.jpg";
+import recycling3  from "../assets/Recycling3.jpg";
 
-import Office1 from "../assets/Office1.jpg";
-import Office2 from "../assets/Office2.jpg";
-import Office3 from "../assets/Office3.jpg";
-import Office4 from "../assets/Office4.jpg";
+import capecod1    from "../assets/CapeCode1.jpg";
+import capecod2    from "../assets/CapeCode2.jpg";
+import capecod3    from "../assets/CapeCode3.jpg";
 
-import capecod1 from "../assets/CapeCode1.jpg";
-import capecod2 from "../assets/CapeCode2.jpg";
-import capecod3 from "../assets/CapeCode3.jpg";
+import ocean1      from "../assets/Ocean1.jpg";
+import ocean2      from "../assets/Ocean2.jpg";
+import ocean3      from "../assets/Ocean3.jpg";
+import ocean4      from "../assets/Ocean4.jpg";
+import ocean5      from "../assets/Ocean5.jpg";
+import ocean6      from "../assets/Ocean6.jpg";
 
-import ocean1 from "../assets/Ocean1.jpg";
-import ocean2 from "../assets/Ocean2.jpg";
-import ocean3 from "../assets/Ocean3.jpg";
-import ocean4 from "../assets/Ocean4.jpg";
-import ocean5 from "../assets/Ocean5.jpg";
-import ocean6 from "../assets/Ocean6.jpg";
+import Office1      from "../assets/Office1.jpg";
+import Office2      from "../assets/Office2.jpg";
+import Office3      from "../assets/Office3.jpg";
+import Office4      from "../assets/Office4.jpg";
 
 const sections = [
   {
