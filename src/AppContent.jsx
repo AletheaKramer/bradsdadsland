@@ -69,7 +69,7 @@ function AppContent() {
             </button>
           <div className="relative flex flex-col items-end">
             <p className="w-full text-right text-xs sm:text-sm md:text-base text-brownPrimary mt-2 mb-1 pr-1">
-              Reservations open on January&nbsp;2nd&nbsp;–&nbsp;online only.
+            Reservations open January 2 — online only
             </p>
           </div>
 
