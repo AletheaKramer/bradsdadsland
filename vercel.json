@@ -1,8 +1,17 @@
+
 {
   "rewrites": [
     {
       "source": "/(.*)",
       "destination": "/index.html"
+    }
+  ],
+
+  "redirects": [
+    {
+      "source": "/site-photos/:match*",
+      "destination": "/gallery",
+      "permanent": true
     }
   ]
 }
