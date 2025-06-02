@@ -7,9 +7,12 @@ import GalleryPage from "./components/Gallery";
 import Policies from "./components/Policies";
 import Amenities from "./components/Amenities";
 import ROFR from "./components/ROFR";
+import VintageTrailers from "./components/VintageTrailers"; 
 import { Routes, Route, useLocation, Link } from "react-router-dom";
 import { Arrow } from "./components/Icon";
 import Footer from "./components/Footer";
+import { Helmet } from "react-helmet";
+import favicon from "./assets/bdl-favicon.png";
 
 function AppContent() {
   const location = useLocation();
@@ -34,6 +37,9 @@ function AppContent() {
 
   return (
     <div className="w-screen min-h-screen bg-beigePrimary">
+      <Helmet>
+        <link rel="icon" type="image/png" href={favicon} />
+      </Helmet>
       <div className={`p-8 ${isHomePage ? "pb-24" : "pb-12"}`}>
         <div className="max-w-[1500px] mx-auto flex justify-between">
           {/* Logo */}
@@ -42,7 +48,9 @@ function AppContent() {
               <img
                 src={bradsdadsland}
                 alt="Logo"
-                className={`w-[250px] lg:w-[400px] ${!isHomePage && "lg:w-[300px]"}`}
+                className={`w-[250px] lg:w-[400px] ${
+                  !isHomePage && "lg:w-[300px]"
+                }`}
               />
             </Link>
             <h1
@@ -57,23 +65,22 @@ function AppContent() {
           {/* Nav + Book Now + Notice */}
           <div className="relative flex flex-col items-end">
             <Nav />
-            {/* Moved Book Now above the notice */}
+            {/* Book Now */}
             <button
               ref={headerButtonRef}
               className="text-sm md:text-md lg:text-lg xl:text-xl px-4 md:px-6 lg:px-8 py-1 md:py-2 lg:py-3 border border-brownPrimary rounded-full font-sans font-medium text-brownPrimary hover:bg-brownPrimary hover:text-beigePrimary transition whitespace-nowrap"
               onClick={() =>
-                window.open("https://www.campspot.com/book/bradsdadsland", "_blank")
+                window.open(
+                  "https://www.campspot.com/book/bradsdadsland",
+                  "_blank"
+                )
               }
             >
               Book Now
             </button>
-          <div className="relative flex flex-col items-end">
             <p className="w-full text-right text-xs sm:text-sm md:text-base text-brownPrimary mt-2 mb-1 pr-1">
-            Reservations open January 2 — online only
+              Reservations open January 2 — online only
             </p>
-          </div>
-
-
           </div>
         </div>
 
@@ -88,10 +95,15 @@ function AppContent() {
             <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-40 text-white">
               <button
                 className={`hidden lg:block lg:text-3xl px-8 py-3 border border-beigePrimary rounded-full font-lora font-medium text-beigePrimary transition duration-300 ease-in-out hover:border-4 ${
-                  showHeroButton ? "opacity-100" : "opacity-0 pointer-events-none"
+                  showHeroButton
+                    ? "opacity-100"
+                    : "opacity-0 pointer-events-none"
                 }`}
                 onClick={() =>
-                  window.open("https://www.campspot.com/book/bradsdadsland", "_blank")
+                  window.open(
+                    "https://www.campspot.com/book/bradsdadsland",
+                    "_blank"
+                  )
                 }
               >
                 Book Now
@@ -110,33 +122,37 @@ function AppContent() {
             <Route path="/amenities" element={<Amenities />} />
             <Route path="/policies" element={<Policies />} />
             <Route path="/rofr" element={<ROFR />} />
+            <Route path="/vintage-trailers" element={<VintageTrailers />} />
           </Routes>
         </div>
       </div>
 
       {/* Floating buttons & footer */}
       {showScrollToTop && (
-        <div className="hidden lg:block">
-          <button
-            className="fixed bottom-4 right-4 bg-beigePrimary text-brownPrimary w-12 h-12 rounded-full shadow-lg flex items-center justify-center hover:bg-peach hover:text-white transition"
-            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          >
-            <Arrow direction="up" />
-          </button>
-          <button
-            className="fixed bottom-4 right-20 bg-beigePrimary text-brownPrimary w-28 h-12 rounded-full shadow-lg flex items-center justify-center hover:bg-peach hover:text-white transition"
-            onClick={() =>
-              window.open("https://www.campspot.com/book/bradsdadsland", "_blank")
-            }
-          >
-            Book Now
-          </button>
-        </div>
-      )}
+              <>
+              <button
+                className="fixed bottom-20 right-4 lg:bottom-4 lg:right-20 bg-beigePrimary text-brownPrimary w-12 h-12 rounded-full shadow-lg flex items-center justify-center hover:bg-peach hover:text-white transition z-50"
+                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                aria-label="Scroll to top"
+              >
+                <Arrow direction="up" />
+              </button>
 
-      <Footer />
-    </div>
-  );
+              {/* Book-Now — always visible */}
+              <button
+                className="fixed bottom-4 right-4 bg-beigePrimary text-brownPrimary px-5 lg:px-7 h-12 rounded-full shadow-lg flex items-center justify-center font-medium hover:bg-brownPrimary hover:text-beigePrimary transition z-50"
+                onClick={() =>
+                  window.open('https://www.campspot.com/book/bradsdadsland', '_blank')
+                }
+              >
+                Book Now
+              </button>
+              </>
+            )}
+
+            <Footer />
+          </div>
+        );
 }
 
 export default AppContent;
