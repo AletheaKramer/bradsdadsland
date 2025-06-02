@@ -1,56 +1,69 @@
+/* ──────────────────────────────────────────────────────────────
+   AppContent.jsx  —  Brad’s Dads Land
+   ────────────────────────────────────────────────────────────── */
+
 import React, { useEffect, useState, useRef } from "react";
-import heroImage from "./assets/HeroImage.png";
-import bradsdadsland from "./assets/logo.gif";
-import Nav from "./components/Nav.jsx";
-import Campsite from "./components/Campsite";
-import GalleryPage from "./components/Gallery";
-import Policies from "./components/Policies";
-import Amenities from "./components/Amenities";
-import ROFR from "./components/ROFR";
-import VintageTrailers from "./components/VintageTrailers"; 
-import { Routes, Route, useLocation, Link } from "react-router-dom";
-import { Arrow } from "./components/Icon";
-import Footer from "./components/Footer";
-import { Helmet } from "react-helmet";
-import favicon from "./assets/bdl-favicon.png";
+import { Routes, Route, useLocation, Link }   from "react-router-dom";
+import { Helmet }                             from "react-helmet";
+
+import heroImage       from "./assets/HeroImage.png";
+import logoGif         from "./assets/logo.gif";
+import faviconPng      from "./assets/bdl-favicon.png";
+
+import Nav             from "./components/Nav.jsx";
+import Campsite        from "./components/Campsite";
+import GalleryPage     from "./components/Gallery";
+import Policies        from "./components/Policies";
+import Amenities       from "./components/Amenities";
+import ROFR            from "./components/ROFR";
+import VintageTrailers from "./components/VintageTrailers";
+import Footer          from "./components/Footer";
+import { Arrow }       from "./components/Icon";
 
 function AppContent() {
-  const location = useLocation();
-  const isHomePage = location.pathname === "/";
-  const [showHeroButton, setShowHeroButton] = useState(false);
-  const [showScrollToTop, setShowScrollToTop] = useState(false);
-  const headerButtonRef = useRef(null);
+  const location             = useLocation();
+  const isHomePage           = location.pathname === "/";
 
+  const [showHeroBtn, setShowHeroBtn]       = useState(false);
+  const [showScrollTop, setShowScrollTop]   = useState(false);
+
+  const headerBtnRef = useRef(null);
+
+  /* ───── Observe the header “Book Now” so we know when to show the arrow ─── */
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        setShowHeroButton(!entry.isIntersecting);
-        setShowScrollToTop(!entry.isIntersecting);
+        const isVisible = entry.isIntersecting;
+        setShowHeroBtn(!isVisible);
+        setShowScrollTop(!isVisible);
       },
-      { rootMargin: "0px", threshold: 0 }
+      { threshold: 0 }
     );
-    if (headerButtonRef.current) observer.observe(headerButtonRef.current);
+
+    if (headerBtnRef.current) observer.observe(headerBtnRef.current);
     return () => {
-      if (headerButtonRef.current) observer.unobserve(headerButtonRef.current);
+      if (headerBtnRef.current) observer.unobserve(headerBtnRef.current);
     };
   }, []);
 
+  /* ──────────────────────────── render ──────────────────────────── */
   return (
     <div className="w-screen min-h-screen bg-beigePrimary">
+      {/* favicon (handled by react-helmet) */}
       <Helmet>
-        <link rel="icon" type="image/png" href={favicon} />
+        <link rel="icon" type="image/png" href={faviconPng} />
       </Helmet>
+
+      {/* ─────────── Header / Hero ─────────── */}
       <div className={`p-8 ${isHomePage ? "pb-24" : "pb-12"}`}>
         <div className="max-w-[1500px] mx-auto flex justify-between">
-          {/* Logo */}
+          {/* logo + tagline */}
           <div>
             <Link to="/">
               <img
-                src={bradsdadsland}
-                alt="Logo"
-                className={`w-[250px] lg:w-[400px] ${
-                  !isHomePage && "lg:w-[300px]"
-                }`}
+                src={logoGif}
+                alt="Brad's Dads Land logo"
+                className={`w-[250px] lg:w-[400px] ${!isHomePage && "lg:w-[300px]"}`}
               />
             </Link>
             <h1
@@ -62,97 +75,105 @@ function AppContent() {
             </h1>
           </div>
 
-          {/* Nav + Book Now + Notice */}
+          {/* nav + header “Book Now” */}
           <div className="relative flex flex-col items-end">
             <Nav />
-            {/* Book Now */}
+
             <button
-              ref={headerButtonRef}
-              className="text-sm md:text-md lg:text-lg xl:text-xl px-4 md:px-6 lg:px-8 py-1 md:py-2 lg:py-3 border border-brownPrimary rounded-full font-sans font-medium text-brownPrimary hover:bg-brownPrimary hover:text-beigePrimary transition whitespace-nowrap"
+              ref={headerBtnRef}
+              className="text-sm md:text-md lg:text-lg xl:text-xl
+                         px-4 md:px-6 lg:px-8 py-1 md:py-2 lg:py-3
+                         border border-brownPrimary rounded-full
+                         font-sans font-medium
+                         text-brownPrimary hover:bg-brownPrimary hover:text-beigePrimary
+                         transition whitespace-nowrap"
               onClick={() =>
-                window.open(
-                  "https://www.campspot.com/book/bradsdadsland",
-                  "_blank"
-                )
+                window.open("https://www.campspot.com/book/bradsdadsland", "_blank")
               }
             >
-              Book Now
+              Book&nbsp;Now
             </button>
+
             <p className="w-full text-right text-xs sm:text-sm md:text-base text-brownPrimary mt-2 mb-1 pr-1">
-              Reservations open January 2 — online only
+              Reservations open January&nbsp;2 — online only
             </p>
           </div>
         </div>
 
-        {/* Hero on home only */}
+        {/* hero (home only) */}
         {isHomePage && (
-          <div className="relative w-full border rounded-lg overflow-hidden h-[calc(100vh-12rem)] lg:h-[calc(100vh-4rem)]">
+          <div className="relative w-full border rounded-lg overflow-hidden
+                          h-[calc(100vh-12rem)] lg:h-[calc(100vh-4rem)]">
             <img
               src={heroImage}
               alt="Main header"
               className="object-cover w-full h-full"
             />
-            <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-40 text-white">
+            <div className="absolute inset-0 flex items-center justify-center
+                            bg-black bg-opacity-40 text-white">
               <button
-                className={`hidden lg:block lg:text-3xl px-8 py-3 border border-beigePrimary rounded-full font-lora font-medium text-beigePrimary transition duration-300 ease-in-out hover:border-4 ${
-                  showHeroButton
-                    ? "opacity-100"
-                    : "opacity-0 pointer-events-none"
-                }`}
+                className={`hidden lg:block lg:text-3xl px-8 py-3
+                            border border-beigePrimary rounded-full font-lora font-medium
+                            text-beigePrimary transition duration-300 ease-in-out hover:border-4
+                            ${showHeroBtn ? "opacity-100" : "opacity-0 pointer-events-none"}`}
                 onClick={() =>
-                  window.open(
-                    "https://www.campspot.com/book/bradsdadsland",
-                    "_blank"
-                  )
+                  window.open("https://www.campspot.com/book/bradsdadsland", "_blank")
                 }
               >
-                Book Now
+                Book&nbsp;Now
               </button>
             </div>
           </div>
         )}
       </div>
 
-      {/* Routes */}
+      {/* ─────────── Routes ─────────── */}
       <div className="bg-brownPrimary w-full">
         <div className="max-w-[1500px] mx-auto">
           <Routes>
-            <Route path="/" element={<Campsite />} />
-            <Route path="/gallery" element={<GalleryPage />} />
-            <Route path="/amenities" element={<Amenities />} />
-            <Route path="/policies" element={<Policies />} />
-            <Route path="/rofr" element={<ROFR />} />
+            <Route path="/"               element={<Campsite />} />
+            <Route path="/gallery"        element={<GalleryPage />} />
+            <Route path="/amenities"      element={<Amenities />} />
+            <Route path="/policies"       element={<Policies />} />
+            <Route path="/rofr"           element={<ROFR />} />
             <Route path="/vintage-trailers" element={<VintageTrailers />} />
           </Routes>
         </div>
       </div>
 
-      {/* Floating buttons & footer */}
-      {showScrollToTop && (
-              <>
-              <button
-                className="fixed bottom-20 right-4 lg:bottom-4 lg:right-20 bg-beigePrimary text-brownPrimary w-12 h-12 rounded-full shadow-lg flex items-center justify-center hover:bg-peach hover:text-white transition z-50"
-                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-                aria-label="Scroll to top"
-              >
-                <Arrow direction="up" />
-              </button>
+      {/* ─────────── Floating action buttons ─────────── */}
+      <div className="fixed bottom-4 right-4 flex items-center gap-4 lg:gap-6 z-50">
+        {/* Book Now — left */}
+        <button
+          className="px-5 lg:px-7 h-12 rounded-full shadow-lg
+                     flex items-center justify-center font-medium
+                     bg-beigePrimary text-brownPrimary
+                     hover:bg-brownPrimary hover:text-beigePrimary transition"
+          onClick={() =>
+            window.open("https://www.campspot.com/book/bradsdadsland", "_blank")
+          }
+        >
+          Book&nbsp;Now
+        </button>
 
-              {/* Book-Now — always visible */}
-              <button
-                className="fixed bottom-4 right-4 bg-beigePrimary text-brownPrimary px-5 lg:px-7 h-12 rounded-full shadow-lg flex items-center justify-center font-medium hover:bg-brownPrimary hover:text-beigePrimary transition z-50"
-                onClick={() =>
-                  window.open('https://www.campspot.com/book/bradsdadsland', '_blank')
-                }
-              >
-                Book Now
-              </button>
-              </>
-            )}
+        {/* Up-arrow — right (appears once you scroll) */}
+        {showScrollTop && (
+          <button
+            className="w-12 h-12 rounded-full shadow-lg
+                       flex items-center justify-center
+                       bg-beigePrimary text-brownPrimary
+                       hover:bg-peach hover:text-white transition"
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            aria-label="Scroll to top"
+          >
+            <Arrow direction="up" />
+          </button>
+        )}
+      </div>
 
-            <Footer />
-          </div>
-        );
+      <Footer />
+    </div>
+  );
 }
 
 export default AppContent;
