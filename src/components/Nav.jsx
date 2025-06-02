@@ -38,6 +38,9 @@ const Nav = () => {
       {/* Desktop menu */}
       <div className="hidden md:flex justify-between items-center">
         <div className="flex space-x-16 font-sans font-medium text-brownPrimary">
+          <Link to="/vintage-trailers" className="hover:text-beigeSecondary text-lg">
+            Vintage Trailers
+          </Link>
           <Link to="/gallery" className="hover:text-beigeSecondary text-lg">
             Gallery
           </Link>
@@ -48,7 +51,7 @@ const Nav = () => {
             Policies
           </Link>
           <Link to="/rofr" className="hover:text-beigeSecondary text-lg">
-            Join our ROFR Program
+            ROFR
           </Link>
         </div>
       </div>
@@ -57,6 +60,13 @@ const Nav = () => {
       {isOpen && (
         <div className="absolute right-0 top-12 w-64 bg-beigePrimary shadow-lg z-50 md:hidden">
           <div className="p-6 space-y-6">
+            <Link
+              to="/vintage-trailers"
+              className="block text-xl font-sans text-brownPrimary hover:text-beigeSecondary"
+              onClick={() => setIsOpen(false)}
+            >
+              Vintage Trailers
+            </Link>
             <Link
               to="/gallery"
               className="block text-xl font-sans text-brownPrimary hover:text-beigeSecondary"
@@ -83,7 +93,7 @@ const Nav = () => {
               className="block text-xl font-sans text-brownPrimary hover:text-beigeSecondary"
               onClick={() => setIsOpen(false)}
             >
-              Join our ROFR Program
+              ROFR
             </Link>
           </div>
         </div>
