@@ -24,18 +24,18 @@ function AppContent() {
   const location             = useLocation();
   const isHomePage           = location.pathname === "/";
 
-  const [showHeroBtn, setShowHeroBtn]       = useState(false);
-  const [showScrollTop, setShowScrollTop]   = useState(false);
+  const [showHeroBtn,  setShowHeroBtn]  = useState(false);
+  const [showScrollTop, setShowScrollTop] = useState(false);
 
   const headerBtnRef = useRef(null);
 
-  /* ───── Observe the header “Book Now” so we know when to show the arrow ─── */
+  /* ───── Observe the header “Book Now” so we know when to show the cluster ─── */
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        const isVisible = entry.isIntersecting;
-        setShowHeroBtn(!isVisible);
-        setShowScrollTop(!isVisible);
+        const headerVisible = entry.isIntersecting;
+        setShowHeroBtn(!headerVisible);     // fade-in hero button (desktop only)
+        setShowScrollTop(!headerVisible);   // gate bottom-right cluster
       },
       { threshold: 0 }
     );
@@ -49,7 +49,7 @@ function AppContent() {
   /* ──────────────────────────── render ──────────────────────────── */
   return (
     <div className="w-screen min-h-screen bg-beigePrimary">
-      {/* favicon (handled by react-helmet) */}
+      {/* favicon */}
       <Helmet>
         <link rel="icon" type="image/png" href={faviconPng} />
       </Helmet>
@@ -57,12 +57,12 @@ function AppContent() {
       {/* ─────────── Header / Hero ─────────── */}
       <div className={`p-8 ${isHomePage ? "pb-24" : "pb-12"}`}>
         <div className="max-w-[1500px] mx-auto flex justify-between">
-          {/* logo + tagline */}
+          {/* Logo + tagline */}
           <div>
             <Link to="/">
               <img
                 src={logoGif}
-                alt="Brad's Dads Land logo"
+                alt="Bradsdadsland logo"
                 className={`w-[250px] lg:w-[400px] ${!isHomePage && "lg:w-[300px]"}`}
               />
             </Link>
@@ -75,7 +75,7 @@ function AppContent() {
             </h1>
           </div>
 
-          {/* nav + header “Book Now” */}
+          {/* Nav + header Book Now */}
           <div className="relative flex flex-col items-end">
             <Nav />
 
@@ -100,7 +100,7 @@ function AppContent() {
           </div>
         </div>
 
-        {/* hero (home only) */}
+        {/* Hero (home only) */}
         {isHomePage && (
           <div className="relative w-full border rounded-lg overflow-hidden
                           h-[calc(100vh-12rem)] lg:h-[calc(100vh-4rem)]">
@@ -141,23 +141,23 @@ function AppContent() {
         </div>
       </div>
 
-      {/* ─────────── Floating action buttons ─────────── */}
-      <div className="fixed bottom-4 right-4 flex items-center gap-4 lg:gap-6 z-50">
-        {/* Book Now — left */}
-        <button
-          className="px-5 lg:px-7 h-12 rounded-full shadow-lg
-                     flex items-center justify-center font-medium
-                     bg-beigePrimary text-brownPrimary
-                     hover:bg-brownPrimary hover:text-beigePrimary transition"
-          onClick={() =>
-            window.open("https://www.campspot.com/book/bradsdadsland", "_blank")
-          }
-        >
-          Book&nbsp;Now
-        </button>
+      {/* ─────────── Floating action buttons (appear after scroll) ─────────── */}
+      {showScrollTop && (
+        <div className="fixed bottom-4 right-4 flex items-center gap-4 lg:gap-6 z-50">
+          {/* Book Now — left */}
+          <button
+            className="px-5 lg:px-7 h-12 rounded-full shadow-lg
+                       flex items-center justify-center font-medium
+                       bg-beigePrimary text-brownPrimary
+                       hover:bg-brownPrimary hover:text-beigePrimary transition"
+            onClick={() =>
+              window.open("https://www.campspot.com/book/bradsdadsland", "_blank")
+            }
+          >
+            Book&nbsp;Now
+          </button>
 
-        {/* Up-arrow — right (appears once you scroll) */}
-        {showScrollTop && (
+          {/* Up-arrow — right */}
           <button
             className="w-12 h-12 rounded-full shadow-lg
                        flex items-center justify-center
@@ -168,8 +168,8 @@ function AppContent() {
           >
             <Arrow direction="up" />
           </button>
-        )}
-      </div>
+        </div>
+      )}
 
       <Footer />
     </div>
