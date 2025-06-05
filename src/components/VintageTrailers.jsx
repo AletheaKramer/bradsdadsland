@@ -83,7 +83,7 @@ INSIDE THE TRAILER
 
 Ground sheets, pillows, and pillowcases are supplied; please bring blankets, sleeping bags, and towels.
 
-GOOD TO KNOW
+QUICK FACTS
 • One small-car parking stall (larger vehicles redirected by staff)
 • Showers, freezer room, tuck store & laundromat nearby
 • No pets or stereo music
@@ -124,7 +124,7 @@ INSIDE THE TRAILER
 
 Ground sheets, pillows, and pillowcases provided; please bring blankets, sleeping bags, and towels.
 
-NEED-TO-KNOWS
+QUICK FACTS
 • One small-car parking stall (larger vehicles redirected by staff)
 • Showers, freezer room, tuck store & laundromat nearby
 • No pets or stereo music
@@ -199,7 +199,7 @@ INSIDE THE TRAILER
 
 Ground sheets, pillows, and pillowcases supplied; please bring blankets, sleeping bags, and towels.
 
-GOOD TO KNOW
+QUICK FACTS
 • One small-car parking stall (larger vehicles redirected by staff)
 • Showers, freezer room, tuck store & laundromat nearby
 • No pets or stereo music
