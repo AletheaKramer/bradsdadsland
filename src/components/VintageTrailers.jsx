@@ -184,7 +184,7 @@ QUICK FACTS
   {
     name: "Aljo 1954 (Site 14C)",
     features: ["Picnic Table", "Fire Pit", "Electricity", "Water Hook-Up"],
-    description: `Hand-finished by prairie craftsmen Brian & Brenda of Gribbs, SK, our cozy 1954 Aljo in site 1B offers a warm-wood interior in a compact footprint.
+    description: `Hand-finished by prairie craftsmen Brian & Brenda of Gribbs, SK, our cozy 1954 Aljo in site 14C offers a warm-wood interior in a compact footprint.
 
 SLEEPS
 • Sleeps two adults: pick separate nests - a three-quarter bed and a convertible dinette — or, depending on the love, cuddle up together in the three-quarter bed
