@@ -182,16 +182,16 @@ QUICK FACTS
     ),
   },
   {
-    name: "Aljo 1954 (Site 1B)",
+    name: "Aljo 1954 (Site 14C)",
     features: ["Picnic Table", "Fire Pit", "Electricity", "Water Hook-Up"],
     description: `Hand-finished by prairie craftsmen Brian & Brenda of Gribbs, SK, our cozy 1954 Aljo in site 1B offers a warm-wood interior in a compact footprint.
 
 SLEEPS
-• 2 adults in a three-quarter bed
+• Sleeps two adults: pick separate nests - a three-quarter bed and a convertible dinette — or, depending on the love, cuddle up together in the three-quarter bed
 • Optional child-sized tent (max 1.6 m × 2 m)
 
 INSIDE THE TRAILER
-• Mini-fridge
+• Cooler
 • Sink
 • Heater & fan
 • Picnic table
