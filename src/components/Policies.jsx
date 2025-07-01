@@ -1,4 +1,3 @@
-// src/components/Policies.jsx
 import React from "react";
 import policiesImage from "../assets/Policies.jpg";
 
@@ -20,9 +19,7 @@ const Policies = () => {
         </h2>
 
         <ol className="list-decimal list-inside text-lg space-y-4">
-          <li>
-            Reservations are highly recommended during summer months.
-          </li>
+          <li>Reservations are highly recommended during summer months.</li>
           <li>
             A deposit is required for a guaranteed reservation. During the off‑season,
             the deposit is one night of the basic rate for each site you book. During
@@ -62,6 +59,18 @@ const Policies = () => {
           <li>
             The base rate for RV/Tent sites covers 2 adults and 2 children. Anything
             above is charged additionally regardless of occupancy (max 8 people).
+          </li>
+          <li>
+            Guests are required to leave their campsite in a clean and orderly condition upon departure. Failure to comply—including, but not limited to: leaving garbage or personal items on the site, placing waste of any kind (excluding firewood) in the fire pit, disposing of non-toilet paper items in the outhouses, or leaving excess mess in or around the recycling area—<strong>may, at the sole discretion of the campground operator</strong>, result in a cleaning fee. The amount of such fee will be determined by the operator and added to the guest’s final invoice without prior notice.
+          </li>
+          <li>
+            Any damage, defacement, or destruction of campground property—whether intentional, negligent, or accidental—<strong>shall result in a damage fee, the amount of which will be determined solely by the campground operator</strong>, based on the extent of the damage and the costs of repair or replacement. Guests agree to accept the operator’s assessment as final and binding.
+          </li>
+          <li>
+            Check-out must occur no later than the designated time provided in your reservation confirmation. <strong>Failure to vacate the site by the specified time will automatically result in an additional night’s charge, without exception</strong>, and does not exempt the guest from the obligation to promptly vacate the site for incoming guests. The campground operator reserves the right to remove any property left on-site after the check-out time and is not liable for any loss or damage resulting from such removal.
+          </li>
+          <li>
+            Use of generators and air conditioning units that emit noticeable sound is permitted only during the following time windows: 10:00 AM to 11:00 AM, 2:00 PM to 3:00 PM, and 6:00 PM to 7:00 PM. <strong>Use outside of these hours constitutes a violation of campground policy and may result in penalties, including but not limited to fines, eviction without refund, or restrictions on future bookings</strong>. The operator retains full discretion in determining whether a device is considered noisy.
           </li>
           <li>
             <strong>Cancellation Policy:</strong><br />
