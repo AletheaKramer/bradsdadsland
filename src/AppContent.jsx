@@ -18,7 +18,7 @@ import Amenities       from "./components/Amenities";
 import ROFR            from "./components/ROFR";
 import VintageTrailers from "./components/VintageTrailers";
 import Footer          from "./components/Footer";
-import AboutUs         from "./components/AboutUs";
+import AboutUs         from "./components/AboutUs.jsx";
 import { Arrow }       from "./components/Icon";
 
 function AppContent() {
