@@ -24,7 +24,7 @@ const AboutUs = () => {
           In 1980 I was a young man in my very early 30’s, spending my summer weekends,
           after working five 10 hour days on the carpentry crew expanding the Mac Blo pulp mill
           in Campbell River, at the Pink House (but now no longer pink, it’s the property adjacent
-          and just west of Carbrea Winery) on Hornby Island, partying with Dudes, Erin, Blair and
+          and just west of Carbrea Winery, which is now the Hornby Heart Vineyard) on Hornby Island, partying with Dudes, Erin, Blair and
           anybody else who dropped in, long into the early hours.
         </p>
         <p className="text-lg mb-4">
@@ -73,7 +73,7 @@ const AboutUs = () => {
         {/* Who we are now */}
         <h3 className="text-2xl font-semibold mt-10 mb-4">Who we are now</h3>
         <p className="text-lg mb-4">
-          Well wouldn’t you know it, I met my wife Heather at the campsite, camping. Now 25 years
+          Well wouldn’t you know it, I met my wife Heather at the campsite, camping. Now 35 years
           later, she still tolerates me, and there’s our children Zoe, Zephi, Alethea and Avrum
           as well. In summer, we live in the little varnished house by the front gate.
         </p>
