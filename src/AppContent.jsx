@@ -13,7 +13,7 @@ import Policies from "./components/Policies";
 import Amenities from "./components/Amenities";
 import ROFR from "./components/ROFR";
 import VintageTrailers from "./components/VintageTrailers";
-import AboutUs from "./components/AboutUs.jsx";
+import AboutUs from "./components/AboutUs";
 import Footer from "./components/Footer";
 import { Arrow } from "./components/Icon";
 
