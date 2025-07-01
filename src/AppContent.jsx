@@ -1,42 +1,37 @@
-/* ──────────────────────────────────────────────────────────────
-   AppContent.jsx  —  Brad’s Dads Land
-   ────────────────────────────────────────────────────────────── */
-
 import React, { useEffect, useState, useRef } from "react";
-import { Routes, Route, useLocation, Link }   from "react-router-dom";
-import { Helmet }                             from "react-helmet";
+import { Routes, Route, useLocation, Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
-import heroImage       from "./assets/HeroImage.png";
-import logoGif         from "./assets/logo.gif";
-import faviconPng      from "./assets/bdl-favicon.png";
+import heroImage from "./assets/HeroImage.png";
+import logoGif from "./assets/logo.gif";
+import faviconPng from "./assets/bdl-favicon.png";
 
-import Nav             from "./components/Nav.jsx";
-import Campsite        from "./components/Campsite";
-import GalleryPage     from "./components/Gallery";
-import Policies        from "./components/Policies";
-import Amenities       from "./components/Amenities";
-import ROFR            from "./components/ROFR";
+import Nav from "./components/Nav.jsx";
+import Campsite from "./components/Campsite";
+import GalleryPage from "./components/Gallery";
+import Policies from "./components/Policies";
+import Amenities from "./components/Amenities";
+import ROFR from "./components/ROFR";
 import VintageTrailers from "./components/VintageTrailers";
-import Footer          from "./components/Footer";
-import AboutUs         from "./components/AboutUs.jsx";
-import { Arrow }       from "./components/Icon";
+import AboutUs from "./components/AboutUs.jsx";
+import Footer from "./components/Footer";
+import { Arrow } from "./components/Icon";
 
 function AppContent() {
-  const location             = useLocation();
-  const isHomePage           = location.pathname === "/";
+  const location = useLocation();
+  const isHomePage = location.pathname === "/";
 
-  const [showHeroBtn,  setShowHeroBtn]  = useState(false);
+  const [showHeroBtn, setShowHeroBtn] = useState(false);
   const [showScrollTop, setShowScrollTop] = useState(false);
 
   const headerBtnRef = useRef(null);
 
-  /* ───── Observe the header “Book Now” so we know when to show the cluster ─── */
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         const headerVisible = entry.isIntersecting;
-        setShowHeroBtn(!headerVisible);     // fade-in hero button (desktop only)
-        setShowScrollTop(!headerVisible);   // gate bottom-right cluster
+        setShowHeroBtn(!headerVisible);
+        setShowScrollTop(!headerVisible);
       },
       { threshold: 0 }
     );
@@ -47,18 +42,14 @@ function AppContent() {
     };
   }, []);
 
-  /* ──────────────────────────── render ──────────────────────────── */
   return (
     <div className="w-screen min-h-screen bg-beigePrimary">
-      {/* favicon */}
       <Helmet>
         <link rel="icon" type="image/png" href={faviconPng} />
       </Helmet>
 
-      {/* ─────────── Header / Hero ─────────── */}
       <div className={`p-8 ${isHomePage ? "pb-24" : "pb-12"}`}>
         <div className="max-w-[1500px] mx-auto flex justify-between">
-          {/* Logo + tagline */}
           <div>
             <Link to="/">
               <img
@@ -76,7 +67,6 @@ function AppContent() {
             </h1>
           </div>
 
-          {/* Nav + header Book Now */}
           <div className="relative flex flex-col items-end">
             <Nav />
 
@@ -101,17 +91,10 @@ function AppContent() {
           </div>
         </div>
 
-        {/* Hero (home only) */}
         {isHomePage && (
-          <div className="relative w-full border rounded-lg overflow-hidden
-                          h-[calc(100vh-12rem)] lg:h-[calc(100vh-4rem)]">
-            <img
-              src={heroImage}
-              alt="Main header"
-              className="object-cover w-full h-full"
-            />
-            <div className="absolute inset-0 flex items-center justify-center
-                            bg-black bg-opacity-40 text-white">
+          <div className="relative w-full border rounded-lg overflow-hidden h-[calc(100vh-12rem)] lg:h-[calc(100vh-4rem)]">
+            <img src={heroImage} alt="Main header" className="object-cover w-full h-full" />
+            <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-40 text-white">
               <button
                 className={`hidden lg:block lg:text-3xl px-8 py-3
                             border border-beigePrimary rounded-full font-lora font-medium
@@ -128,25 +111,22 @@ function AppContent() {
         )}
       </div>
 
-      {/* ─────────── Routes ─────────── */}
       <div className="bg-brownPrimary w-full">
         <div className="max-w-[1500px] mx-auto">
           <Routes>
-            <Route path="/"               element={<Campsite />} />
-            <Route path="/gallery"        element={<GalleryPage />} />
-            <Route path="/amenities"      element={<Amenities />} />
-            <Route path="/policies"       element={<Policies />} />
-            <Route path="/rofr"           element={<ROFR />} />
+            <Route path="/" element={<Campsite />} />
+            <Route path="/gallery" element={<GalleryPage />} />
+            <Route path="/amenities" element={<Amenities />} />
+            <Route path="/policies" element={<Policies />} />
+            <Route path="/rofr" element={<ROFR />} />
             <Route path="/vintage-trailers" element={<VintageTrailers />} />
-            <Route path="/about-us"       element={<AboutUs />} />
+            <Route path="/about-us" element={<AboutUs />} />
           </Routes>
         </div>
       </div>
 
-      {/* ─────────── Floating action buttons (appear after scroll) ─────────── */}
       {showScrollTop && (
         <div className="fixed bottom-4 right-4 flex items-center gap-4 lg:gap-6 z-50">
-          {/* Book Now — left */}
           <button
             className="px-5 lg:px-7 h-12 rounded-full shadow-lg
                        flex items-center justify-center font-medium
@@ -159,7 +139,6 @@ function AppContent() {
             Book&nbsp;Now
           </button>
 
-          {/* Up-arrow — right */}
           <button
             className="w-12 h-12 rounded-full shadow-lg
                        flex items-center justify-center
