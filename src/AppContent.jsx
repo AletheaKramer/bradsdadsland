@@ -1,7 +1,3 @@
-/* ──────────────────────────────────────────────────────────────
-   AppContent.jsx  —  Brad’s Dads Land
-   ────────────────────────────────────────────────────────────── */
-
 import React, { useEffect, useState, useRef } from "react";
 import { Routes, Route, useLocation, Link }   from "react-router-dom";
 import { Helmet }                             from "react-helmet";
@@ -18,6 +14,7 @@ import Amenities       from "./components/Amenities";
 import ROFR            from "./components/ROFR";
 import VintageTrailers from "./components/VintageTrailers";
 import Footer          from "./components/Footer";
+import AboutUs         from "./components/AboutUs"
 import { Arrow }       from "./components/Icon";
 
 function AppContent() {
@@ -131,12 +128,13 @@ function AppContent() {
       <div className="bg-brownPrimary w-full">
         <div className="max-w-[1500px] mx-auto">
           <Routes>
-            <Route path="/"               element={<Campsite />} />
-            <Route path="/gallery"        element={<GalleryPage />} />
-            <Route path="/amenities"      element={<Amenities />} />
-            <Route path="/policies"       element={<Policies />} />
-            <Route path="/rofr"           element={<ROFR />} />
+            <Route path="/"                 element={<Campsite />} />
+            <Route path="/gallery"          element={<GalleryPage />} />
+            <Route path="/amenities"        element={<Amenities />} />
+            <Route path="/policies"         element={<Policies />} />
+            <Route path="/rofr"             element={<ROFR />} />
             <Route path="/vintage-trailers" element={<VintageTrailers />} />
+            <Route path="/about-us"         element={<AboutUs />} />
           </Routes>
         </div>
       </div>

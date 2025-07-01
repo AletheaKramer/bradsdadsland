@@ -53,6 +53,9 @@ const Nav = () => {
           <Link to="/rofr" className="hover:text-beigeSecondary text-lg">
             ROFR
           </Link>
+          <Link to="/about-us" className="hover:text-beigeSecondary text-lg">
+            About Us
+          </Link>
         </div>
       </div>
 
@@ -94,6 +97,13 @@ const Nav = () => {
               onClick={() => setIsOpen(false)}
             >
               ROFR
+            </Link>
+            <Link
+              to="/about-us"
+              className="block text-xl font-sans text-brownPrimary hover:text-beigeSecondary"
+              onClick={() => setIsOpen(false)}
+            >
+              About Us
             </Link>
           </div>
         </div>
