@@ -3,7 +3,7 @@ import { Routes, Route, useLocation, Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
 
 import heroImage from "./assets/HeroImage.png";
-import logoGif from "./assets/logo.gif";
+import logoGif from "./assets/logoSlow.gif";
 import faviconPng from "./assets/bdl-favicon.png";
 
 import Nav from "./components/Nav.jsx";
@@ -55,7 +55,9 @@ function AppContent() {
               <img
                 src={logoGif}
                 alt="Bradsdadsland logo"
-                className={`w-[250px] lg:w-[400px] ${!isHomePage && "lg:w-[300px]"}`}
+                className={`w-[250px] lg:w-[400px] ${
+                  !isHomePage && "lg:w-[300px]"
+                }`}
               />
             </Link>
             <h1
@@ -79,7 +81,10 @@ function AppContent() {
                          text-brownPrimary hover:bg-brownPrimary hover:text-beigePrimary
                          transition whitespace-nowrap"
               onClick={() =>
-                window.open("https://www.campspot.com/book/bradsdadsland", "_blank")
+                window.open(
+                  "https://www.campspot.com/book/bradsdadsland",
+                  "_blank"
+                )
               }
             >
               Book&nbsp;Now
@@ -93,15 +98,26 @@ function AppContent() {
 
         {isHomePage && (
           <div className="relative w-full border rounded-lg overflow-hidden h-[calc(100vh-12rem)] lg:h-[calc(100vh-4rem)]">
-            <img src={heroImage} alt="Main header" className="object-cover w-full h-full" />
+            <img
+              src={heroImage}
+              alt="Main header"
+              className="object-cover w-full h-full"
+            />
             <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-40 text-white">
               <button
                 className={`hidden lg:block lg:text-3xl px-8 py-3
                             border border-beigePrimary rounded-full font-lora font-medium
                             text-beigePrimary transition duration-300 ease-in-out hover:border-4
-                            ${showHeroBtn ? "opacity-100" : "opacity-0 pointer-events-none"}`}
+                            ${
+                              showHeroBtn
+                                ? "opacity-100"
+                                : "opacity-0 pointer-events-none"
+                            }`}
                 onClick={() =>
-                  window.open("https://www.campspot.com/book/bradsdadsland", "_blank")
+                  window.open(
+                    "https://www.campspot.com/book/bradsdadsland",
+                    "_blank"
+                  )
                 }
               >
                 Book&nbsp;Now
@@ -133,7 +149,10 @@ function AppContent() {
                        bg-beigePrimary text-brownPrimary
                        hover:bg-brownPrimary hover:text-beigePrimary transition"
             onClick={() =>
-              window.open("https://www.campspot.com/book/bradsdadsland", "_blank")
+              window.open(
+                "https://www.campspot.com/book/bradsdadsland",
+                "_blank"
+              )
             }
           >
             Book&nbsp;Now
