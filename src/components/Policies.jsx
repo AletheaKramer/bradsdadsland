@@ -130,7 +130,7 @@ const Policies = () => {
           </a>{" "}
           or{" "}
           <a
-            href="mailto:bradsdadsland@telus.net"
+            href="mailto:contact@bradsdadsland.com"
             className="underline hover:text-beigeSecondary"
           >
             email us

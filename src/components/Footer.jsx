@@ -23,10 +23,10 @@ const Footer = () => {
               </p>
               <p className="mt-4">
                 <a
-                  href="mailto:bradsdadsland@telus.net"
+                  href="mailto:contact@bradsdadsland.com"
                   className="hover:text-beigeSecondary transition"
                 >
-                  bradsdadsland@telus.net
+                  contact@bradsdadsland.com
                 </a>
               </p>
             </div>

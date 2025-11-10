@@ -8,7 +8,7 @@ const ContactUs = () => {
         <h2 className="text-4xl font-bold mb-6 text-beigeSecondary">Contact Us</h2>
         
         <p className="text-lg">
-          <strong>Email:</strong> <a href="mailto:bradsdadsland@telus.net" className="underline hover:text-beigeSecondary">bradsdadsland@telus.net</a>
+          <strong>Email:</strong> <a href="mailto:contact@bradsdadsland.com" className="underline hover:text-beigeSecondary">contact@bradsdadsland.com</a>
         </p>
         <p className="text-lg mt-2">2105 Shingle Spit Road</p>
         <p className="text-lg">Hornby Island, BC Canada</p>
