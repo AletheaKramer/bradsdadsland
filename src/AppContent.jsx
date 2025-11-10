@@ -65,7 +65,7 @@ function AppContent() {
                 isHomePage ? "mt-4 mb-2" : "mt-2 mb-1"
               }`}
             >
-              Camping from days gone by
+              ‎ ‎ Camping from days gone by
             </h1>
           </div>
 
