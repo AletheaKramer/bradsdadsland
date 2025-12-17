@@ -17,7 +17,7 @@ const AboutUs = () => {
           About Us
         </h2>
         <p className="text-lg mb-6 italic">
-          The story of Bradsdadsland, as told by owner and founder Issac Kramer
+          The story of Bradsdadsland, as told by owner and founder Issac (Brad) Kramer
         </p>
 
         {/* How we got named */}
