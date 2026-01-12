@@ -79,7 +79,6 @@ INSIDE THE TRAILER
 • Sink
 • Heater & fan
 • Picnic table
-• Fire ring
 
 Ground sheets, pillows, and pillowcases are supplied; please bring blankets, sleeping bags, and towels.
 
@@ -120,7 +119,6 @@ INSIDE THE TRAILER
 • Heater & fan
 • Dinette
 • Picnic table
-• Fire ring
 
 Ground sheets, pillows, and pillowcases provided; please bring blankets, sleeping bags, and towels.
 
@@ -164,7 +162,6 @@ INSIDE THE TRAILER
 • Heater & fan
 • Dinette
 • Picnic table
-• Fire ring
 
 Ground sheets, pillows, and pillowcases supplied; please bring blankets, sleeping bags, and towels.
 
@@ -195,7 +192,6 @@ INSIDE THE TRAILER
 • Sink
 • Heater & fan
 • Picnic table
-• Fire ring
 
 Ground sheets, pillows, and pillowcases supplied; please bring blankets, sleeping bags, and towels.
 
