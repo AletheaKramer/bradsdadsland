@@ -79,7 +79,7 @@ const RGPP = () => (
     </p>
 
     <a
-      href="https://www.campspot.com/book/bradsdadsland"
+      href="https://drive.google.com/file/d/1CftrxuCX4tX364bHl_uwa52y7X8wLgF1/view?usp=sharing"
       target="_blank"
       rel="noopener noreferrer"
       className="inline-block bg-beigePrimary text-brownPrimary hover:bg-beigeSecondary px-6 py-3 rounded-full font-medium transition"
