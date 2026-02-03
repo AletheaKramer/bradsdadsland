@@ -89,7 +89,6 @@ QUICK FACTS
 • Quiet hours 10 pm – 7 am
 • $25 cleaning fee + $300 damage deposit
 • Check-in 4 pm · Check-out 11 am
-• Two-night minimum
 • Max 2 guests (adults or children)`,
     images: build(
       [air1, air2, air3, air4, air5, air6, air7, air8, air9],
@@ -129,7 +128,7 @@ QUICK FACTS
 • Quiet hours 10 pm – 7 am
 • $25 cleaning fee + $300 damage deposit
 • Check-in 4 pm · Check-out 11 am
-• Two-night minimum`,
+`,
     images: build(
       [
         bol1, bol2, bol3, bol4, bol5,
@@ -172,7 +171,7 @@ QUICK FACTS
 • Quiet hours 10 pm – 7 am
 • $25 cleaning fee + $300 damage deposit
 • Check-in 4 pm · Check-out 11 am
-• Two-night minimum`,
+`,
     images: build(
       [sha1, sha2, sha3, sha4, sha5, sha6, sha7, sha8, sha9, sha10, sha11],
       "Shasta 1962"
@@ -184,7 +183,7 @@ QUICK FACTS
     description: `Hand-finished by prairie craftsmen Brian & Brenda of Gribbs, SK, our cozy 1954 Aljo in site 14C offers a warm-wood interior in a compact footprint.
 
 SLEEPS
-• Sleeps two adults: pick separate nests - a three-quarter bed and a convertible dinette — or, depending on the love, cuddle up together in the three-quarter bed
+• Sleeps two adults: pick separate nests - a twin bed and a convertible dinette — or, depending on the love, cuddle up together in the twin bed
 • Optional child-sized tent (max 1.6 m × 2 m)
 
 INSIDE THE TRAILER
@@ -202,7 +201,7 @@ QUICK FACTS
 • Quiet hours 10 pm – 7 am
 • $25 cleaning fee + $300 damage deposit
 • Check-in 4 pm · Check-out 11 am
-• Two-night minimum`,
+`,
     images: build([alj1, alj2, alj3, alj4, alj5], "Aljo 1954"),
   },
 ];

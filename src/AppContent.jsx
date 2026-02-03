@@ -11,7 +11,7 @@ import Campsite from "./components/Campsite";
 import GalleryPage from "./components/Gallery";
 import Policies from "./components/Policies";
 import Amenities from "./components/Amenities";
-import ROFR from "./components/ROFR";
+import RGPP from "./components/RGPP";
 import VintageTrailers from "./components/VintageTrailers";
 import AboutUs from "./components/AboutUs.jsx";
 import Footer from "./components/Footer";
@@ -134,7 +134,7 @@ function AppContent() {
             <Route path="/gallery" element={<GalleryPage />} />
             <Route path="/amenities" element={<Amenities />} />
             <Route path="/policies" element={<Policies />} />
-            <Route path="/rofr" element={<ROFR />} />
+            <Route path="/rgpp" element={<RGPP />} />
             <Route path="/vintage-trailers" element={<VintageTrailers />} />
             <Route path="/about-us" element={<AboutUs />} />
           </Routes>

@@ -10,7 +10,7 @@ const Footer = () => {
           <div>
             <h3 className="text-xl font-semibold mb-4">Contact Us</h3>
             <div className="space-y-2">
-              <p>Bradsdadsland Campsite</p>
+              <p>Bradsdadsland Family Campground</p>
               <p>2105 Shingle Spit Rd</p>
               <p>Hornby Island, BC V0R 1Z0</p>
               <p className="mt-4">
@@ -72,13 +72,12 @@ const Footer = () => {
                   Google Reviews
                 </a>
               </p>
-              {/* New ROFR link */}
               <p>
                 <Link
-                  to="/rofr"
+                  to="/rgpp"
                   className="hover:text-beigeSecondary transition"
                 >
-                  Join our ROFR Program
+                  Join our RGPP Program
                 </Link>
               </p>
             </div>
@@ -87,7 +86,7 @@ const Footer = () => {
 
         <div className="mt-12 pt-8 border-t border-brownPrimary/20 text-center text-sm">
           <p>
-            © {new Date().getFullYear()} Bradsdadsland Campsite. All rights
+            © {new Date().getFullYear()} Bradsdadsland Family Campground. All rights
             reserved.
           </p>
         </div>

@@ -61,7 +61,7 @@ const images = [
   { src: Outhouse3, alt: "Gallery – Outhouse 3" },
   { src: Outhouse4, alt: "Gallery – Outhouse 4" },
   { src: PoliciesImg, alt: "Gallery – Policies" },
-  { src: ROFRImg, alt: "Gallery – ROFR" },
+  { src: ROFRImg, alt: "Gallery – RGPP" },
   { src: Recycling1, alt: "Gallery – Recycling 1" },
   { src: Recycling2, alt: "Gallery – Recycling 2" },
   { src: Recycling3, alt: "Gallery – Recycling 3" },

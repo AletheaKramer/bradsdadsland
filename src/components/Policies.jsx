@@ -101,11 +101,11 @@ const Policies = () => {
           </li>
         </ol>
 
-        {/* ROFR Section */}
-        <h3 className="text-2xl font-semibold mt-10">Right of First Refusal (ROFR):</h3>
+        {/* RGPP Section */}
+        <h3 className="text-2xl font-semibold mt-10">Returning Guest Priority Program (RGPP):</h3>
         <p className="text-lg mt-2">
           Guests returning annually on the same date and site may reserve up to one year
-          in advance. ROFR reservations require compliance with the cancellation policy.
+          in advance. RGPP reservations require compliance with the cancellation policy.
         </p>
 
         {/* Ready to Book */}
