@@ -134,7 +134,8 @@ const Policies = () => {
             className="underline hover:text-beigeSecondary"
           >
             email us
-          </a>
+          </a>{" "}
+          or{" "}
           for inquiries.
           <br />
           We look forward to hosting you!
