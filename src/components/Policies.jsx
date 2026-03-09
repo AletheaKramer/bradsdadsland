@@ -261,9 +261,11 @@ const Policies = () => {
             </h3>
             <p className="mt-2">
               If you need a little extra time, late check-out is available at $25
-              per hour, subject to availability. To ensure we&apos;re ready for
-              incoming guests, belongings may be moved by staff if a site is not
-              vacated on time.
+              per hour, subject to availability. We want every arriving guest to
+              have a warm welcome and a smooth check-in, so sites need to be fully
+              vacated in time for the next guests to come in. If we need to clear
+              a site, move belongings, or move vehicles to prepare for incoming
+              guests, an additional charge will apply.
             </p>
           </section>
 
