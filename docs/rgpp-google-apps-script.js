@@ -33,15 +33,15 @@ function doPost(e) {
     submissionsSheet.appendRow([
       submittedAt,
       submissionId,
-      guest.firstName,
-      guest.lastName,
-      guest.email,
-      guest.phone,
-      guest.address,
-      guest.city,
-      guest.stateProvince || "",
-      guest.country || "",
-      guest.postalCode,
+      safeSheetValue_(guest.firstName),
+      safeSheetValue_(guest.lastName),
+      safeSheetValue_(guest.email),
+      safeSheetValue_(guest.phone),
+      safeSheetValue_(guest.address),
+      safeSheetValue_(guest.city),
+      safeSheetValue_(guest.stateProvince || ""),
+      safeSheetValue_(guest.country || ""),
+      safeSheetValue_(guest.postalCode),
       reservations.length,
       JSON.stringify(reservations),
       "New",
@@ -51,10 +51,10 @@ function doPost(e) {
       expandedSheet.appendRow([
         submissionId,
         submittedAt,
-        `${guest.firstName} ${guest.lastName}`,
-        guest.email,
-        guest.phone,
-        reservation.site,
+        safeSheetValue_(`${guest.firstName} ${guest.lastName}`),
+        safeSheetValue_(guest.email),
+        safeSheetValue_(guest.phone),
+        safeSheetValue_(reservation.site),
         reservation.fromDate,
         reservation.toDate,
       ]);
@@ -358,6 +358,16 @@ function formatFullDateLabel_(isoDate) {
 
 function uniqueValues_(values) {
   return Array.from(new Set(values.filter(Boolean)));
+}
+
+function safeSheetValue_(value) {
+  const stringValue = String(value == null ? "" : value);
+
+  if (/^[=+\-@]/.test(stringValue)) {
+    return `'${stringValue}`;
+  }
+
+  return stringValue;
 }
 
 function escapeHtml_(value) {
