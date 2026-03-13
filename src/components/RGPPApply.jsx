@@ -895,10 +895,6 @@ const RGPPApply = () => {
                       </div>
                     )}
 
-                    {!canUseAddressAutocomplete && mapsError && (
-                      <p className="text-sm text-amber-800">{mapsError}</p>
-                    )}
-
                     {showManualAddressFields && (
                       <>
                         <div>
