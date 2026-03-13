@@ -866,37 +866,38 @@ const RGPPApply = () => {
                       </div>
                     </div>
 
-                    <div>
-                      <label className="mb-2 block text-sm font-medium" htmlFor="addressLookup">
-                        Address
-                      </label>
-                      <input
-                        id="addressLookup"
-                        name="addressLookup"
-                        type="text"
-                        ref={addressLookupInputRef}
-                        autoComplete="street-address"
-                        maxLength={160}
-                        placeholder="Start typing your address"
-                        value={guest.addressLookup}
-                        onChange={handleGuestChange}
-                        aria-invalid={Boolean(guestErrors.addressLookup)}
-                        className={fieldClassName}
-                      />
-                      <div className="mt-2">
-                        <p className="text-sm text-brownPrimary/58">
-                          {canUseAddressAutocomplete
-                            ? "Select your address from the autocomplete list to continue."
-                            : "Address autocomplete is unavailable. Enter your address manually below."}
-                        </p>
+                    {canUseAddressAutocomplete && (
+                      <div>
+                        <label className="mb-2 block text-sm font-medium" htmlFor="addressLookup">
+                          Address
+                        </label>
+                        <input
+                          id="addressLookup"
+                          name="addressLookup"
+                          type="text"
+                          ref={addressLookupInputRef}
+                          autoComplete="street-address"
+                          maxLength={160}
+                          placeholder="Start typing your address"
+                          value={guest.addressLookup}
+                          onChange={handleGuestChange}
+                          aria-invalid={Boolean(guestErrors.addressLookup)}
+                          className={fieldClassName}
+                        />
+                        <div className="mt-2">
+                          <p className="text-sm text-brownPrimary/58">
+                            Select your address from the autocomplete list to continue.
+                          </p>
+                        </div>
+                        {guestErrors.addressLookup && (
+                          <p className="mt-2 text-sm text-red-700">{guestErrors.addressLookup}</p>
+                        )}
                       </div>
-                      {mapsError && (
-                        <p className="mt-2 text-sm text-amber-800">{mapsError}</p>
-                      )}
-                      {guestErrors.addressLookup && (
-                        <p className="mt-2 text-sm text-red-700">{guestErrors.addressLookup}</p>
-                      )}
-                    </div>
+                    )}
+
+                    {!canUseAddressAutocomplete && mapsError && (
+                      <p className="text-sm text-amber-800">{mapsError}</p>
+                    )}
 
                     {showManualAddressFields && (
                       <>
