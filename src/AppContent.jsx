@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Routes, Route, useLocation, Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
 
@@ -12,6 +12,7 @@ import GalleryPage from "./components/Gallery";
 import Policies from "./components/Policies";
 import Amenities from "./components/Amenities";
 import RGPP from "./components/RGPP";
+import RGPPApply from "./components/RGPPApply";
 import VintageTrailers from "./components/VintageTrailers";
 import AboutUs from "./components/AboutUs.jsx";
 import Footer from "./components/Footer";
@@ -36,11 +37,22 @@ function AppContent() {
       { threshold: 0 }
     );
 
-    if (headerBtnRef.current) observer.observe(headerBtnRef.current);
+    const headerButton = headerBtnRef.current;
+
+    if (headerButton) {
+      observer.observe(headerButton);
+    }
+
     return () => {
-      if (headerBtnRef.current) observer.unobserve(headerBtnRef.current);
+      if (headerButton) {
+        observer.unobserve(headerButton);
+      }
     };
   }, []);
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "auto" });
+  }, [location.pathname]);
 
   return (
     <div className="w-screen min-h-screen bg-beigePrimary">
@@ -135,6 +147,7 @@ function AppContent() {
             <Route path="/amenities" element={<Amenities />} />
             <Route path="/policies" element={<Policies />} />
             <Route path="/rgpp" element={<RGPP />} />
+            <Route path="/rgpp/apply" element={<RGPPApply />} />
             <Route path="/vintage-trailers" element={<VintageTrailers />} />
             <Route path="/about-us" element={<AboutUs />} />
           </Routes>
