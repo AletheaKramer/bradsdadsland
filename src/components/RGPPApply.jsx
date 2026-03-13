@@ -51,6 +51,7 @@ const endpoint = import.meta.env.VITE_RGPP_INTAKE_ENDPOINT || "";
 const mapsApiKey = import.meta.env.VITE_GOOGLE_MAPS_API_KEY || "";
 const mapsScriptId = "google-maps-places-script";
 const MAPS_READY_TIMEOUT_MS = 10000;
+const FALLBACK_INTAKE_PATH = "/api/rgpp";
 
 const normalizeWhitespace = (value) => value.replace(/\s+/g, " ").trim();
 const formatPhoneInput = (value) => value.replace(/[^\d+()\-.\s]/g, "");
@@ -377,8 +378,9 @@ const RGPPApply = () => {
   const [formStartedAt] = useState(() => Date.now());
   const addressLookupInputRef = useRef(null);
 
-  const hasEndpoint = useMemo(() => endpoint.trim().length > 0, []);
   const hasMapsApiKey = useMemo(() => mapsApiKey.trim().length > 0, []);
+  const directIntakeEndpoint = useMemo(() => endpoint.trim(), []);
+  const submissionTarget = directIntakeEndpoint || FALLBACK_INTAKE_PATH;
   const regionLabel = getRegionLabel(guest.country);
   const postalLabel = getPostalLabel(guest.country);
   const postalPlaceholder = getPostalPlaceholder(guest.country);
@@ -636,13 +638,6 @@ const RGPPApply = () => {
       return;
     }
 
-    if (!hasEndpoint) {
-      setSubmitError(
-        "The RGPP intake form is not connected yet. Please add the intake endpoint before submitting."
-      );
-      return;
-    }
-
     const payload = {
       submittedAt: new Date().toISOString(),
       source: "bradsdadsland-rgpp-apply-page",
@@ -664,14 +659,33 @@ const RGPPApply = () => {
     try {
       setIsSubmitting(true);
 
-      await fetch(endpoint, {
-        method: "POST",
-        mode: "no-cors",
-        headers: {
-          "Content-Type": "text/plain;charset=utf-8",
-        },
-        body: JSON.stringify(payload),
-      });
+      if (directIntakeEndpoint) {
+        await fetch(directIntakeEndpoint, {
+          method: "POST",
+          mode: "no-cors",
+          headers: {
+            "Content-Type": "text/plain;charset=utf-8",
+          },
+          body: JSON.stringify(payload),
+        });
+      } else {
+        const response = await fetch(submissionTarget, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(payload),
+        });
+
+        const result = await response.json().catch(() => null);
+
+        if (!response.ok || !result?.ok) {
+          throw new Error(
+            result?.message ||
+              "We couldn’t submit your sign-up right now. Please try again or contact us directly at contact@bradsdadsland.com."
+          );
+        }
+      }
 
       if (typeof window !== "undefined") {
         window.localStorage.setItem(SUBMIT_LOCK_KEY, String(Date.now()));
