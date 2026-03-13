@@ -182,7 +182,7 @@ const validatePostalCode = (country, postalCode) => {
   return "";
 };
 
-const validateGuest = (guest, regionLabel, hasSelectedAddress) => {
+const validateGuest = (guest, regionLabel, requiresAddressSelection, hasSelectedAddress) => {
   const errors = {};
   const normalizedEmail = normalizeWhitespace(guest.email).toLowerCase();
   const phoneDigits = digitsOnly(guest.phone);
@@ -234,7 +234,7 @@ const validateGuest = (guest, regionLabel, hasSelectedAddress) => {
     errors.phone = "Please enter a valid international phone number.";
   }
 
-  if (!hasSelectedAddress) {
+  if (requiresAddressSelection && !hasSelectedAddress) {
     errors.addressLookup = "Select an address from the autocomplete list.";
     return errors;
   }
@@ -383,28 +383,40 @@ const RGPPApply = () => {
   const postalLabel = getPostalLabel(guest.country);
   const postalPlaceholder = getPostalPlaceholder(guest.country);
   const emailPattern = "[A-Za-z0-9.!#$%&'*+/=?^_`{|}~-]+@[A-Za-z0-9-]+(?:\\.[A-Za-z0-9-]+)+";
+  const canUseAddressAutocomplete = hasMapsApiKey && !mapsError;
+  const showManualAddressFields = hasSelectedAddress || !canUseAddressAutocomplete;
 
   const handleGuestChange = (event) => {
     const { name, value } = event.target;
     const nextValue = name === "phone" ? formatPhoneInput(value) : value;
 
     if (name === "addressLookup") {
-      setHasSelectedAddress(false);
+      if (canUseAddressAutocomplete) {
+        setHasSelectedAddress(false);
+      }
       setGuest((current) => ({
         ...current,
         addressLookup: nextValue,
-        address: "",
-        city: "",
-        stateProvince: "",
-        postalCode: "",
+        ...(canUseAddressAutocomplete
+          ? {
+              address: "",
+              city: "",
+              stateProvince: "",
+              postalCode: "",
+            }
+          : {}),
       }));
       setGuestErrors((current) => ({
         ...current,
         addressLookup: "",
-        address: "",
-        city: "",
-        stateProvince: "",
-        postalCode: "",
+        ...(canUseAddressAutocomplete
+          ? {
+              address: "",
+              city: "",
+              stateProvince: "",
+              postalCode: "",
+            }
+          : {}),
       }));
       setSubmitError("");
       return;
@@ -450,7 +462,7 @@ const RGPPApply = () => {
     if (!hasMapsApiKey || !addressLookupInputRef.current) {
       if (!hasMapsApiKey) {
         setMapsError(
-          "Google address lookup is not configured. Add a Google Maps API key to use address autocomplete."
+          "Google address lookup is unavailable right now. Enter your address manually below."
         );
       }
       return undefined;
@@ -477,8 +489,10 @@ const RGPPApply = () => {
           !addressLookupInputRef.current ||
           typeof Autocomplete !== "function"
         ) {
-          return;
+          throw new Error("Google address lookup is unavailable right now. Enter your address manually below.");
         }
+
+        setMapsError("");
 
         const autocomplete = new Autocomplete(addressLookupInputRef.current, {
           types: ["address"],
@@ -561,7 +575,7 @@ const RGPPApply = () => {
           setMapsError(
             error instanceof Error && error.message
               ? error.message
-              : "Google address lookup is unavailable right now. Please try again in a moment."
+              : "Google address lookup is unavailable right now. Enter your address manually below."
           );
         }
       });
@@ -575,7 +589,12 @@ const RGPPApply = () => {
   }, [guest.country, hasMapsApiKey]);
 
   const validate = () => {
-    const nextGuestErrors = validateGuest(guest, regionLabel, hasSelectedAddress);
+    const nextGuestErrors = validateGuest(
+      guest,
+      regionLabel,
+      canUseAddressAutocomplete,
+      hasSelectedAddress
+    );
     const {
       errors: nextReservationErrors,
       completedReservations,
@@ -866,7 +885,9 @@ const RGPPApply = () => {
                       />
                       <div className="mt-2">
                         <p className="text-sm text-brownPrimary/58">
-                          Select your address from the autocomplete list to continue.
+                          {canUseAddressAutocomplete
+                            ? "Select your address from the autocomplete list to continue."
+                            : "Address autocomplete is unavailable. Enter your address manually below."}
                         </p>
                       </div>
                       {mapsError && (
@@ -877,7 +898,7 @@ const RGPPApply = () => {
                       )}
                     </div>
 
-                    {hasSelectedAddress && (
+                    {showManualAddressFields && (
                       <>
                         <div>
                           <label className="mb-2 block text-sm font-medium" htmlFor="address">
