@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useCallback, useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { Arrow } from "../components/Icon";
 
@@ -14,9 +14,15 @@ const LightboxGallery = ({ images }) => {
     setIdx(i);
     setOpen(true);
   };
-  const closeBox = () => setOpen(false);
-  const prev = () => setIdx((i) => (i - 1 + images.length) % images.length);
-  const next = () => setIdx((i) => (i + 1) % images.length);
+  const closeBox = useCallback(() => setOpen(false), []);
+  const prev = useCallback(
+    () => setIdx((i) => (i - 1 + images.length) % images.length),
+    [images.length]
+  );
+  const next = useCallback(
+    () => setIdx((i) => (i + 1) % images.length),
+    [images.length]
+  );
 
   /* keyboard nav */
   useEffect(() => {
@@ -28,7 +34,7 @@ const LightboxGallery = ({ images }) => {
     };
     window.addEventListener("keydown", h);
     return () => window.removeEventListener("keydown", h);
-  }, [open]);
+  }, [closeBox, next, open, prev]);
 
   return (
     <>
@@ -74,12 +80,22 @@ const LightboxGallery = ({ images }) => {
             <div className="absolute inset-y-0 left-0 w-1/2 cursor-pointer" onClick={prev} />
             <div className="absolute inset-y-0 right-0 w-1/2 cursor-pointer" onClick={next} />
             {/* arrows */}
-            <div className="absolute left-2 top-1/2 -translate-y-1/2 text-white text-4xl opacity-60 hover:opacity-100">
-              <Arrow direction="left" />
-            </div>
-            <div className="absolute right-2 top-1/2 -translate-y-1/2 text-white text-4xl opacity-60 hover:opacity-100">
-              <Arrow direction="right" />
-            </div>
+            <button
+              type="button"
+              className="absolute left-2 sm:left-4 top-1/2 z-10 -translate-y-1/2 text-white opacity-70 hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-white rounded-full px-3 py-2"
+              aria-label="Previous image"
+              onClick={prev}
+            >
+              <Arrow direction="left" className="text-6xl sm:text-7xl leading-none" />
+            </button>
+            <button
+              type="button"
+              className="absolute right-2 sm:right-4 top-1/2 z-10 -translate-y-1/2 text-white opacity-70 hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-white rounded-full px-3 py-2"
+              aria-label="Next image"
+              onClick={next}
+            >
+              <Arrow direction="right" className="text-6xl sm:text-7xl leading-none" />
+            </button>
           </div>
 
           {/* thumb strip */}

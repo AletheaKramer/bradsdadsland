@@ -1,4 +1,4 @@
-import React from "react";
+import PropTypes from "prop-types";
 
 const Icon = ({ src, alt, label }) => {
   return (
@@ -19,7 +19,7 @@ const Icon = ({ src, alt, label }) => {
   );
 };
 
-export const Arrow = ({ direction = "up" }) => {
+export const Arrow = ({ direction = "up", className = "text-2xl" }) => {
   const arrows = {
     up: "↑",
     left: "←",
@@ -28,7 +28,7 @@ export const Arrow = ({ direction = "up" }) => {
 
   return (
     <span
-      className="text-2xl"
+      className={className}
       style={{
         fontFamily:
           "-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif",
@@ -37,6 +37,17 @@ export const Arrow = ({ direction = "up" }) => {
       {arrows[direction]}
     </span>
   );
+};
+
+Icon.propTypes = {
+  src: PropTypes.string.isRequired,
+  alt: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired,
+};
+
+Arrow.propTypes = {
+  direction: PropTypes.oneOf(["up", "left", "right"]),
+  className: PropTypes.string,
 };
 
 export default Icon;
