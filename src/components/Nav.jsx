@@ -38,6 +38,9 @@ const Nav = () => {
       {/* Desktop menu */}
       <div className="hidden md:flex justify-between items-center">
         <div className="flex space-x-16 font-sans font-medium text-brownPrimary">
+          <Link to="/" className="hover:text-beigeSecondary text-lg">
+            Home
+          </Link>
           <Link to="/vintage-trailers" className="hover:text-beigeSecondary text-lg">
             Vintage Trailers
           </Link>
@@ -69,6 +72,13 @@ const Nav = () => {
       {isOpen && (
         <div className="absolute right-0 top-12 w-64 bg-beigePrimary shadow-lg z-50 md:hidden">
           <div className="p-6 space-y-6">
+            <Link
+              to="/"
+              className="block text-xl font-sans text-brownPrimary hover:text-beigeSecondary"
+              onClick={() => setIsOpen(false)}
+            >
+              Home
+            </Link>
             <Link
               to="/vintage-trailers"
               className="block text-xl font-sans text-brownPrimary hover:text-beigeSecondary"
