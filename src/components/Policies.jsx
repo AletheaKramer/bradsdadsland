@@ -1,5 +1,3 @@
-import React from "react";
-import { Link } from "react-router-dom";
 import policiesImage from "../assets/Policies.jpg";
 
 const Policies = () => {
@@ -21,23 +19,42 @@ const Policies = () => {
 
         <div className="space-y-8 text-lg leading-relaxed">
           <p>
-            We&apos;re delighted you&apos;re considering a stay at Bradsdadsland Family
-            Campground. Our aim is to provide a clean, peaceful, and family-friendly
-            place where guests can relax and enjoy the outdoors. These Terms &amp;
-            Conditions help set clear expectations so everyone has a great experience.
+            We&apos;re delighted you&apos;re considering a stay with us. Our goal is to
+            provide a clean, peaceful, and family-friendly place where guests can
+            relax, connect with nature, and enjoy their time away. These Terms &amp;
+            Conditions help set clear expectations so everyone can have a positive
+            experience.
           </p>
           <p>
-            By making a reservation, you agree to comply with these Terms &amp;
-            Conditions, all posted campground policies, and staff instructions.
+            By making a reservation, you agree to these Terms &amp; Conditions, any
+            posted campground policies, and reasonable staff directions.
           </p>
+
+          <section>
+            <h3 className="text-2xl font-semibold text-beigeSecondary">
+              Being Good Neighbours
+            </h3>
+            <p className="mt-2">
+              One of the things that makes Bradsdadsland special is the friendly,
+              respectful atmosphere created by our guests. We ask everyone to be
+              considerate of fellow campers, staff, wildlife, and the natural
+              environment throughout their stay.
+            </p>
+            <p className="mt-2">
+              If a concern arises, we&apos;ll do our best to resolve it through a
+              conversation. In rare situations where behaviour continues to
+              negatively affect other guests or campground operations, we may ask a
+              guest to leave the campground without refund.
+            </p>
+          </section>
 
           <section>
             <h3 className="text-2xl font-semibold text-beigeSecondary">
               Reservations
             </h3>
             <p className="mt-2">
-              Reservations are strongly recommended, particularly during the summer
-              months, to ensure availability.
+              Reservations are strongly recommended, especially during the summer
+              season, to ensure availability.
             </p>
           </section>
 
@@ -46,27 +63,16 @@ const Policies = () => {
               Deposits &amp; Payments
             </h3>
             <p className="mt-2">
-              A deposit is required to confirm and guarantee all reservations.
+              A one-night deposit is required to confirm and guarantee all
+              reservations.
             </p>
-            <ul className="list-disc pl-6 mt-2 space-y-2">
-              <li>
-                Off-Season: Deposit equals one night of the basic site rate per
-                site booked.
-              </li>
-              <li>
-                Regular &amp; Peak Seasons: Deposit equals two nights of the basic
-                site rate per site booked.
-              </li>
-              <li>
-                The portion of the deposit equal to one night&apos;s site fee is
-                non-refundable.
-              </li>
-              <li>
-                Deposits apply to the basic site rate only and do not include
-                additional services.
-              </li>
-              <li>Services are charged as listed, whether used or not.</li>
-            </ul>
+            <p className="mt-2">
+              The remaining balance for your stay is due upon arrival and prior to
+              site setup. Guests are responsible for ensuring that all people, pets,
+              and additional services are included on their reservation. Applicable
+              fees will be charged according to rates listed at the time of booking
+              or otherwise communicated by the campground.
+            </p>
           </section>
 
           <section>
@@ -74,22 +80,17 @@ const Policies = () => {
               Services &amp; Utilities
             </h3>
             <p className="mt-2">
-              Services are available on select sites. Please inquire for details.
+              Services are available on select sites. Please inquire for
+              availability.
             </p>
             <p className="mt-2">Available services may include:</p>
             <ul className="list-disc pl-6 mt-2 space-y-2">
-              <li>15-amp partial service + water (no sewer)</li>
-              <li>30-amp partial service + water (no sewer)</li>
-            </ul>
-            <p className="mt-2">A sewer dump is available:</p>
-            <ul className="list-disc pl-6 mt-2 space-y-2">
-              <li>For registered campers only</li>
-              <li>For a fee</li>
-              <li>With a minimum stay of three nights</li>
+              <li>15-amp power and water (no sewer)</li>
+              <li>30-amp power and water (no sewer)</li>
             </ul>
             <p className="mt-2">
-              Sites equipped with power meters include 10 kWh per day. Usage beyond
-              this allowance is billed at $0.30 per kWh.
+              A sewer dump station is available for guests staying three nights or
+              longer for a fee of $20.
             </p>
           </section>
 
@@ -98,10 +99,13 @@ const Policies = () => {
               Freezer Tote-Box Service
             </h3>
             <ul className="list-disc pl-6 mt-2 space-y-2">
-              <li>Freezer tote-boxes are available for $2.00 per night.</li>
-              <li>A $20.00 key security deposit is required.</li>
+              <li>Freezer tote-boxes are available for $2 per night.</li>
               <li>
-                During Peak Season, a maximum of two tote-boxes per site is
+                A $20 key deposit is required and will be refunded upon return of
+                the key.
+              </li>
+              <li>
+                During peak season, a maximum of two tote-boxes per site is
                 permitted.
               </li>
             </ul>
@@ -111,45 +115,38 @@ const Policies = () => {
             <h3 className="text-2xl font-semibold text-beigeSecondary">
               Check-In &amp; Registration
             </h3>
-            <p className="mt-2">The first member of each party to arrive must:</p>
-            <ul className="list-disc pl-6 mt-2 space-y-2">
-              <li>Check in and register before setting up on the site</li>
-              <li>Use a valid credit card</li>
-            </ul>
             <p className="mt-2">
-              The full balance for the entire stay is due prior to site setup.
+              To help us get you settled in smoothly, the first member of each
+              party to arrive should check in before setting up on site.
             </p>
-            <p className="mt-2">Guests are responsible for:</p>
-            <ul className="list-disc pl-6 mt-2 space-y-2">
-              <li>
-                Informing the campground of additional people, pets, or services
-              </li>
-              <li>
-                Paying all applicable fees as listed at the time of booking through
-                Campspot or otherwise communicated by the campground
-              </li>
-            </ul>
+            <p className="mt-2">
+              A valid credit card is required for registration.
+            </p>
           </section>
 
           <section>
             <h3 className="text-2xl font-semibold text-beigeSecondary">Pets</h3>
             <p className="mt-2">
-              Bradsdadsland is known as a clean, quiet, and pet-friendly
-              campground, and we appreciate your help in keeping it that way.
+              We are proud to be a pet-friendly campground and appreciate
+              everyone&apos;s help in keeping the campground clean, safe, and enjoyable
+              for all guests.
             </p>
             <p className="mt-2">
-              Pets are charged $8.00 per pet per day, up to three pets per site.
+              Pet fee: $8 per pet, per stay (maximum three pets per site).
             </p>
-            <p className="mt-2">All pets must:</p>
             <ul className="list-disc pl-6 mt-2 space-y-2">
-              <li>Be leashed at all times, including within campsites</li>
-              <li>Be cleaned up after promptly</li>
-              <li>Not disturb other guests</li>
+              <li>
+                Pets must remain on a leash at all times, including within
+                campsites.
+              </li>
+              <li>Please clean up after your pets promptly.</li>
+              <li>Pets should not disturb other guests or wildlife.</li>
             </ul>
             <p className="mt-2">
-              If pet-related issues arise and are not resolved when brought to your
-              attention, we may ask that the pet be removed or that you leave the
-              campground.
+              If a pet-related concern arises, we will do our best to work with you
+              to resolve the situation. If the issue cannot be resolved, we may ask
+              that the pet be removed from the campground or, in rare cases, ask
+              the guest to leave.
             </p>
           </section>
 
@@ -158,57 +155,57 @@ const Policies = () => {
               Quiet Hours
             </h3>
             <p className="mt-2">
-              A peaceful, family-friendly atmosphere is part of what makes
-              Bradsdadsland special.
+              One of the things guests appreciate most about Bradsdadsland is the
+              peaceful atmosphere.
             </p>
             <ul className="list-disc pl-6 mt-2 space-y-2">
               <li>Quiet hours are observed from 10:00 PM to 7:00 AM.</li>
-              <li>Stereo music is not permitted at any time.</li>
+              <li>Stereo music is not permitted within the campground.</li>
+              <li>
+                We ask that children and families help keep noise to a minimum
+                before 9:00 AM and after 8:00 PM out of consideration for fellow
+                campers.
+              </li>
             </ul>
             <p className="mt-2">
-              If noise concerns are not corrected when requested, we may ask you to
-              leave the campground.
+              If excessive noise continues after a reminder, guests may be asked to
+              leave the campground without refund.
             </p>
           </section>
 
           <section>
             <h3 className="text-2xl font-semibold text-beigeSecondary">
-              Occupancy Limits
+              Occupancy
             </h3>
             <p className="mt-2">
-              The base rate for RV and tent sites includes:
+              The base rate for RV and tent sites includes up to four guests.
             </p>
-            <ul className="list-disc pl-6 mt-2 space-y-2">
-              <li>Two adults</li>
-              <li>Two children</li>
-            </ul>
-            <p className="mt-2">Additional occupants are charged accordingly:</p>
-            <ul className="list-disc pl-6 mt-2 space-y-2">
-              <li>Regardless of age</li>
-              <li>Up to a maximum of eight people per site</li>
-            </ul>
+            <p className="mt-2">
+              A maximum of eight guests are permitted per site. Additional guests
+              are welcome at a rate of $8 per person, per night.
+            </p>
           </section>
 
           <section>
             <h3 className="text-2xl font-semibold text-beigeSecondary">
-              Cleaning &amp; Site Condition
+              Site Care &amp; Cleanliness
             </h3>
             <p className="mt-2">
-              We take pride in maintaining a clean and well-cared-for campground,
-              and we ask guests to do the same.
+              We take pride in maintaining a clean and welcoming campground and ask
+              guests to leave their site as they found it.
             </p>
-            <p className="mt-2">Guests are expected to:</p>
+            <p className="mt-2">Please:</p>
             <ul className="list-disc pl-6 mt-2 space-y-2">
-              <li>Leave their site tidy upon departure</li>
-              <li>Remove all garbage from the site</li>
-              <li>Keep fire pits free of waste (firewood only)</li>
-              <li>Use outhouses properly (toilet paper only)</li>
-              <li>Keep recycling areas orderly</li>
+              <li>Leave your site tidy upon departure.</li>
+              <li>Remove all garbage from your campsite.</li>
+              <li>Burn only firewood in fire pits.</li>
+              <li>Use outhouses as intended (toilet paper only).</li>
+              <li>Help keep recycling and common areas clean and organized.</li>
             </ul>
             <p className="mt-2">
-              Sites left in poor condition for campground guidelines may result in
-              being charged a fee of $25, and repeated disregard may result in being
-              asked not to return.
+              Sites requiring excessive cleanup may be subject to a $25 cleaning
+              fee. Repeated disregard for campground guidelines may result in
+              future reservations being declined.
             </p>
           </section>
 
@@ -217,41 +214,12 @@ const Policies = () => {
               Damage to Property
             </h3>
             <p className="mt-2">
-              Guests are responsible for any damage to campground property,
-              facilities, or equipment.
+              Guests are responsible for any damage caused to campground
+              facilities, equipment, buildings, or grounds during their stay.
             </p>
             <p className="mt-2">
-              Damage charges may be applied based on the nature and extent of the
-              damage.
-            </p>
-          </section>
-
-          <section>
-            <h3 className="text-2xl font-semibold text-beigeSecondary">
-              Limits of Responsibility
-            </h3>
-            <p className="mt-2">
-              Bradsdadsland Family Campground is an outdoor, shared-use environment.
-            </p>
-            <p className="mt-2">Guests are responsible for:</p>
-            <ul className="list-disc pl-6 mt-2 space-y-2">
-              <li>Their own safety</li>
-              <li>The supervision of children and dependents</li>
-              <li>The care of personal property at all times</li>
-            </ul>
-            <p className="mt-2">The campground is not responsible for:</p>
-            <ul className="list-disc pl-6 mt-2 space-y-2">
-              <li>Loss, theft, or damage to personal belongings</li>
-              <li>Vehicles, trailers, or recreational equipment</li>
-            </ul>
-            <p className="mt-2">
-              Campground facilities, amenities, and natural areas are used at the
-              guest&apos;s own risk, as outdoor conditions may change due to weather,
-              wildlife, terrain, or normal campground activity.
-            </p>
-            <p className="mt-2">
-              Guests are expected to follow all posted rules, campground policies,
-              and staff instructions.
+              Repair or replacement costs may be charged based on the nature and
+              extent of the damage.
             </p>
           </section>
 
@@ -260,12 +228,14 @@ const Policies = () => {
               Late Check-Out
             </h3>
             <p className="mt-2">
-              If you need a little extra time, late check-out is available at $25
-              per hour, subject to availability. We want every arriving guest to
-              have a warm welcome and a smooth check-in, so sites need to be fully
-              vacated in time for the next guests to come in. If we need to clear
-              a site, move belongings, or move vehicles to prepare for incoming
-              guests, an additional charge will apply.
+              If you&apos;d like a little extra time on departure day, please check
+              with us about late check-out availability.
+            </p>
+            <p className="mt-2">
+              To ensure incoming guests can enjoy a smooth arrival, sites must be
+              vacated by the designated check-out time unless prior arrangements
+              have been made. Additional charges may apply if staff are required to
+              clear or prepare a site after the scheduled departure time.
             </p>
           </section>
 
@@ -274,7 +244,8 @@ const Policies = () => {
               Generators &amp; Noise-Producing Equipment
             </h3>
             <p className="mt-2">
-              Generators and noisy air conditioners may be operated only during the
+              To help maintain a peaceful environment for all guests, generators
+              and noisy air-conditioning units may only be operated during the
               following hours:
             </p>
             <ul className="list-disc pl-6 mt-2 space-y-2">
@@ -289,31 +260,19 @@ const Policies = () => {
               Cancellation Policy
             </h3>
             <ul className="list-disc pl-6 mt-2 space-y-2">
-              <li>0-13 days prior to arrival: Charged the equivalent of two nights</li>
               <li>
-                14 days or more prior to arrival: Charged the equivalent of one
-                night
+                Cancellations made more than 48 hours before arrival are subject to
+                a $15 cancellation fee.
               </li>
               <li>
-                A minimum of 14 days&apos; notice is required to cancel, reschedule,
-                or modify a reservation.
+                Cancellations made within 48 hours of arrival will forfeit the
+                one-night deposit.
               </li>
-              <li>
-                Reservations may be changed or transferred to another available
-                site and/or date within the same calendar year only.
-              </li>
-              <li>Prepayments are not transferable between years.</li>
-              <li>All cancellation or change requests must:</li>
             </ul>
-            <ul className="list-disc pl-12 mt-2 space-y-2">
-              <li>Be submitted by email</li>
-              <li>Include a $15 administration fee</li>
-            </ul>
-            <p className="mt-2">No cancellations or changes are accepted by phone.</p>
             <p className="mt-2">
-              Failure to contact the campground or check in by 12:00 noon on the
-              day following the scheduled arrival date will result in the
-              reservation being treated as a no-show and automatically cancelled.
+              Reservations will be considered a no-show and automatically cancelled
+              if we have not heard from you and you have not checked in by 12:00 PM
+              on the day following your scheduled arrival date.
             </p>
           </section>
 
@@ -322,11 +281,8 @@ const Policies = () => {
               Refund Policy
             </h3>
             <p className="mt-2">
-              If applicable, refunds are processed to the original form of payment,
-              unless held as an account credit at the guest&apos;s request.
-            </p>
-            <p className="mt-2">
-              A valid credit card must be on file for any refund to be processed.
+              When applicable, refunds will be processed to the original method of
+              payment unless the guest requests an account credit.
             </p>
             <p className="mt-2">No refunds are issued for:</p>
             <ul className="list-disc pl-6 mt-2 space-y-2">
@@ -350,20 +306,31 @@ const Policies = () => {
 
           <section>
             <h3 className="text-2xl font-semibold text-beigeSecondary">
-              Returning Guest Priority Program (RGPP)
+              Limits of Responsibility
             </h3>
             <p className="mt-2">
-              Guests returning annually on the same date and site may reserve up
-              to one year in advance. RGPP reservations require compliance with
-              the cancellation policy.
+              Bradsdadsland Family Campground is an outdoor, shared-use
+              environment.
+            </p>
+            <p className="mt-2">Guests are responsible for:</p>
+            <ul className="list-disc pl-6 mt-2 space-y-2">
+              <li>Their own safety</li>
+              <li>The supervision of children and dependents</li>
+              <li>The care of personal property at all times</li>
+            </ul>
+            <p className="mt-2">The campground is not responsible for:</p>
+            <ul className="list-disc pl-6 mt-2 space-y-2">
+              <li>Loss, theft, or damage to personal belongings</li>
+              <li>Vehicles, trailers, or recreational equipment</li>
+            </ul>
+            <p className="mt-2">
+              Campground facilities, amenities, and natural areas are used at the
+              guest&apos;s own risk, as outdoor conditions may change due to weather,
+              wildlife, terrain, or normal campground activity.
             </p>
             <p className="mt-2">
-              <Link
-                to="/rgpp"
-                className="underline hover:text-beigeSecondary"
-              >
-                Learn more about the RGPP program.
-              </Link>
+              Guests are expected to follow all posted rules, campground policies,
+              and staff instructions.
             </p>
           </section>
         </div>
@@ -386,19 +353,11 @@ const Policies = () => {
             href="tel:+12506501310"
             className="underline hover:text-beigeSecondary"
           >
-            250‑650‑1310
+            250-650-1310
           </a>{" "}
-          or{" "}
-          <a
-            href="mailto:contact@bradsdadsland.com"
-            className="underline hover:text-beigeSecondary"
-          >
-            email us
-          </a>{" "}
-          or{" "}
-          for inquiries.
+          with any questions.
           <br />
-          We look forward to hosting you!
+          We look forward to welcoming you to Bradsdadsland Family Campground.
         </p>
       </div>
     </div>
