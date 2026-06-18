@@ -1,4 +1,8 @@
 import policiesImage from "../assets/Policies.jpg";
+import {
+  BOOKING_CONTACT_EMAIL,
+  BOOKING_CONTACT_MAILTO,
+} from "../constants/booking";
 
 const Policies = () => {
   return (
@@ -338,14 +342,12 @@ const Policies = () => {
         {/* Ready to Book */}
         <h3 className="text-2xl font-semibold mt-10">Ready to book?</h3>
         <p className="text-lg mt-2">
-          <strong>Online Booking:</strong>{" "}
+          <strong>Booking:</strong>{" "}
           <a
-            href="https://www.campspot.com/book/bradsdadsland"
-            target="_blank"
-            rel="noopener noreferrer"
+            href={BOOKING_CONTACT_MAILTO}
             className="underline hover:text-beigeSecondary"
           >
-            The easiest way to secure your site.
+            Email {BOOKING_CONTACT_EMAIL} while online booking is down.
           </a>
           <br />
           <strong>Contact:</strong>{" "}

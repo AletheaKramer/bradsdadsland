@@ -1,5 +1,5 @@
-import React from "react";
 import LightboxGallery from "./LightboxGallery";
+import { BOOKING_CONTACT_MAILTO } from "../constants/booking";
 
 import heroBanner from "../assets/airfloat1950-1.png";
 
@@ -224,12 +224,10 @@ const VintageTrailers = () => (
               Vintage Trailers – Camping with indoor comfort
             </h1>
             <a
-              href="https://www.campspot.com/book/bradsdadsland"
-              target="_blank"
-              rel="noopener noreferrer"
+              href={BOOKING_CONTACT_MAILTO}
               className="inline-block bg-beigePrimary text-brownPrimary hover:bg-brownPrimary hover:text-beigePrimary px-6 py-3 rounded-full font-medium transition"
             >
-              Check Availability
+              Email to book
             </a>
           </div>
         </div>

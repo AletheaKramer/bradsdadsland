@@ -7,6 +7,7 @@ import logoGif from "./assets/logoSlow.gif";
 import faviconPng from "./assets/bdl-favicon.png";
 
 import Nav from "./components/Nav.jsx";
+import BookingAlert from "./components/BookingAlert.jsx";
 import Campsite from "./components/Campsite";
 import GalleryPage from "./components/Gallery";
 import Policies from "./components/Policies";
@@ -17,6 +18,11 @@ import VintageTrailers from "./components/VintageTrailers";
 import AboutUs from "./components/AboutUs.jsx";
 import Footer from "./components/Footer";
 import { Arrow } from "./components/Icon";
+import { BOOKING_CONTACT_MAILTO } from "./constants/booking";
+
+const openBookingEmail = () => {
+  window.location.href = BOOKING_CONTACT_MAILTO;
+};
 
 function AppContent() {
   const location = useLocation();
@@ -92,24 +98,21 @@ function AppContent() {
                          font-sans font-medium
                          text-brownPrimary hover:bg-brownPrimary hover:text-beigePrimary
                          transition whitespace-nowrap"
-              onClick={() =>
-                window.open(
-                  "https://www.campspot.com/book/bradsdadsland",
-                  "_blank"
-                )
-              }
+              onClick={openBookingEmail}
             >
               Book&nbsp;Now
             </button>
 
             <p className="w-full text-right text-xs sm:text-sm md:text-base text-brownPrimary mt-2 mb-1 pr-1">
-              Reservations open January&nbsp;2 — online only
+              Online booking is temporarily down
             </p>
           </div>
         </div>
 
+        <BookingAlert />
+
         {isHomePage && (
-          <div className="relative w-full border rounded-lg overflow-hidden h-[calc(100vh-12rem)] lg:h-[calc(100vh-4rem)]">
+          <div className="relative mt-6 w-full border rounded-lg overflow-hidden h-[calc(100vh-12rem)] lg:h-[calc(100vh-4rem)]">
             <img
               src={heroImage}
               alt="Main header"
@@ -125,12 +128,7 @@ function AppContent() {
                                 ? "opacity-100"
                                 : "opacity-0 pointer-events-none"
                             }`}
-                onClick={() =>
-                  window.open(
-                    "https://www.campspot.com/book/bradsdadsland",
-                    "_blank"
-                  )
-                }
+                onClick={openBookingEmail}
               >
                 Book&nbsp;Now
               </button>
@@ -161,12 +159,7 @@ function AppContent() {
                        flex items-center justify-center font-medium
                        bg-beigePrimary text-brownPrimary
                        hover:bg-brownPrimary hover:text-beigePrimary transition"
-            onClick={() =>
-              window.open(
-                "https://www.campspot.com/book/bradsdadsland",
-                "_blank"
-              )
-            }
+            onClick={openBookingEmail}
           >
             Book&nbsp;Now
           </button>
