@@ -15,9 +15,12 @@ fail-closed but not yet activation-ready:
 - `searchconsole_bradsdadsland` is not present yet;
 - five Campspot exports reached the Brad alias. The confirmed-reservations file
   contains exact row IDs for both Brad property `1514` and Beachcomber property
-  `5884`; the importer now filters exact `1514` rows before aggregation. The
-  other four delivered families contain no immutable row ID and remain
-  intentionally unimportable;
+  `5884`; the importer now filters exact `1514` rows before aggregation. A
+  2026-07-24 preview accepted 1,864 Brad source rows and excluded 935
+  non-Brad rows, but the resulting 1,637 normalized reservation facts had no
+  usable site/type label and therefore remain `unknown` for inventory-class
+  reporting. The other four delivered families contain no usable immutable
+  row ID and remain intentionally unimportable;
 - the property-1514 inventory draft is checked in with
   `reviewStatus: "pending_owner_confirmation"`, so it cannot activate
   Scheduler; and

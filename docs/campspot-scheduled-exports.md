@@ -62,14 +62,19 @@ The privacy-safe mailbox inspection on 2026-07-24 found five deliveries:
 | occupancy daily | 365 | missing |
 | refunds | 21 | missing |
 
-Only the confirmed-reservations file can be made safe locally by filtering
-exact `1514` rows before aggregation. The other four deliveries remain
-unimportable. Pause or repair those schedules and ask Campspot for a
-property-1514-only/custom export that includes `Park ID`, `Property ID`, or
-`Property Code` on every row. A Brad-only schedule selection, subject, alias,
-park name, confirmation, invoice, or site label does not replace that column.
-The required reservation-day and cancellation families were not delivered and
-must also be added with the same immutable-ID requirement.
+Only the confirmed-reservations file can be property-scoped locally by
+filtering exact `1514` rows before aggregation. The 2026-07-24 preview accepted
+1,864 Brad source rows, excluded 935 rows from the other property, and produced
+1,637 normalized facts. Those facts had no usable site/type label, so every one
+remains `unknown` for the Campground versus Vintage Trailer split and cannot
+activate class totals.
+
+The other four deliveries remain unimportable. Pause or repair those schedules
+and ask Campspot for a property-1514-only/custom export that includes `Park ID`,
+`Property ID`, or `Property Code` on every row. A Brad-only schedule selection,
+subject, alias, park name, confirmation, invoice, or site label does not replace
+that column. The required reservation-day and cancellation families were not
+delivered and must also be added with the same immutable-ID requirement.
 
 For every schedule:
 
