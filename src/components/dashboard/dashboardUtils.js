@@ -57,6 +57,13 @@ export const vancouverToday = (now = new Date()) => {
   return `${part("year")}-${part("month")}-${part("day")}`;
 };
 
+export const dashboardSeasonOptions = (now = new Date()) => {
+  const current = Number(vancouverToday(now).slice(0, 4));
+  return Array.from({ length: 9 }, (_, index) =>
+    String(current + 2 - index),
+  );
+};
+
 const addDays = (date, days) => {
   const value = new Date(`${date}T12:00:00.000Z`);
   value.setUTCDate(value.getUTCDate() + days);

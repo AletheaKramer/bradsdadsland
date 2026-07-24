@@ -3,6 +3,7 @@ import test from "node:test";
 
 import {
   dashboardToCsv,
+  dashboardSeasonOptions,
   defaultFilters,
   filtersToSearch,
   neutralizeSpreadsheetFormula,
@@ -10,6 +11,10 @@ import {
 } from "../src/components/dashboard/dashboardUtils.js";
 
 test("dashboard URL state contains only applied source filters", () => {
+  assert.deepEqual(
+    dashboardSeasonOptions(new Date("2026-07-23T18:00:00Z")),
+    ["2028", "2027", "2026", "2025", "2024", "2023", "2022", "2021", "2020"],
+  );
   assert.deepEqual(
     defaultFilters("campspot-vintage", new Date("2026-07-23T18:00:00Z")),
     {

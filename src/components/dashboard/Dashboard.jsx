@@ -4,6 +4,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import logoUrl from "../../assets/bradsdadsland.png";
 import {
   defaultFilters,
+  dashboardSeasonOptions,
   downloadDashboardCsv,
   filtersFromLocation,
   filtersToSearch,
@@ -208,16 +209,6 @@ const OptionInput = ({ id, label, value, options, onChange, placeholder }) => (
   </Field>
 );
 
-const seasonOptions = (today = new Date()) => {
-  const current = Number(
-    new Intl.DateTimeFormat("en-CA", {
-      timeZone: "America/Vancouver",
-      year: "numeric",
-    }).format(today),
-  );
-  return Array.from({ length: 6 }, (_, index) => String(current - index));
-};
-
 const FilterBar = ({ filters, data, onApply, onReset }) => {
   const [draft, setDraft] = useState(filters);
   const isCampspot = filters.view.startsWith("campspot-");
@@ -237,7 +228,7 @@ const FilterBar = ({ filters, data, onApply, onReset }) => {
         ...current,
         season,
         start: "2000-01-01",
-        end: `${seasonOptions()[0]}-12-31`,
+        end: `${dashboardSeasonOptions()[0]}-12-31`,
       }));
       return;
     }
@@ -276,7 +267,7 @@ const FilterBar = ({ filters, data, onApply, onReset }) => {
               value={draft.season || ""}
               onChange={(event) => changeSeason(event.target.value)}
             >
-              {seasonOptions().map((season) => (
+              {dashboardSeasonOptions().map((season) => (
                 <option key={season} value={season}>
                   {season}
                 </option>
