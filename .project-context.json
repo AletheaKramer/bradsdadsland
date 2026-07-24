@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "github": {
+    "login": "nvanzant",
+    "repository": "AletheaKramer/bradsdadsland",
+    "sshHost": "github-nvanzant",
+    "author": {
+      "name": "Nicholas Van Zant",
+      "email": "nicholas@vanzant.ca"
+    },
+    "defaultBranch": "main"
+  },
+  "vercel": {
+    "mode": "git-only"
+  }
+}
