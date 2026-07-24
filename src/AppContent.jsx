@@ -18,12 +18,10 @@ import AboutUs from "./components/AboutUs.jsx";
 import ContactUs from "./components/ContactUs.jsx";
 import Footer from "./components/Footer";
 import { Arrow } from "./components/Icon";
-
-const BOOKING_URL = "https://www.campspot.com/book/bradsdadsland";
-
-const openBooking = () => {
-  window.open(BOOKING_URL, "_blank");
-};
+import {
+  BRADS_BOOKING_URL,
+  trackReservationClick,
+} from "./site/bookingTracking.js";
 
 function AppContent() {
   const location = useLocation();
@@ -91,18 +89,21 @@ function AppContent() {
           <div className="relative flex flex-col items-end">
             <Nav />
 
-            <button
+            <a
               ref={headerBtnRef}
+              href={BRADS_BOOKING_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-sm md:text-md lg:text-lg xl:text-xl
                          px-4 md:px-6 lg:px-8 py-1 md:py-2 lg:py-3
                          border border-brownPrimary rounded-full
                          font-sans font-medium
                          text-brownPrimary hover:bg-brownPrimary hover:text-beigePrimary
                          transition whitespace-nowrap"
-              onClick={openBooking}
+              onClick={() => trackReservationClick("header")}
             >
               Book&nbsp;Now
-            </button>
+            </a>
 
             <p className="w-full text-right text-xs sm:text-sm md:text-base text-brownPrimary mt-2 mb-1 pr-1">
               Reservations open January&nbsp;2 — online only
@@ -118,7 +119,10 @@ function AppContent() {
               className="object-cover w-full h-full"
             />
             <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-40 text-white">
-              <button
+              <a
+                href={BRADS_BOOKING_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className={`hidden lg:block lg:text-3xl px-8 py-3
                             border border-beigePrimary rounded-full font-lora font-medium
                             text-beigePrimary transition duration-300 ease-in-out hover:border-4
@@ -127,10 +131,10 @@ function AppContent() {
                                 ? "opacity-100"
                                 : "opacity-0 pointer-events-none"
                             }`}
-                onClick={openBooking}
+                onClick={() => trackReservationClick("hero")}
               >
                 Book&nbsp;Now
-              </button>
+              </a>
             </div>
           </div>
         )}
@@ -154,15 +158,18 @@ function AppContent() {
 
       {showScrollTop && (
         <div className="fixed bottom-4 right-4 flex items-center gap-4 lg:gap-6 z-50">
-          <button
+          <a
+            href={BRADS_BOOKING_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="px-5 lg:px-7 h-12 rounded-full shadow-lg
                        flex items-center justify-center font-medium
                        bg-beigePrimary text-brownPrimary
                        hover:bg-brownPrimary hover:text-beigePrimary transition"
-            onClick={openBooking}
+            onClick={() => trackReservationClick("floating-book-now")}
           >
             Book&nbsp;Now
-          </button>
+          </a>
 
           <button
             className="w-12 h-12 rounded-full shadow-lg

@@ -1,4 +1,8 @@
 import policiesImage from "../assets/Policies.jpg";
+import {
+  BRADS_BOOKING_URL,
+  trackReservationClick,
+} from "../site/bookingTracking.js";
 
 const Policies = () => {
   return (
@@ -340,10 +344,11 @@ const Policies = () => {
         <p className="text-lg mt-2">
           <strong>Online Booking:</strong>{" "}
           <a
-            href="https://www.campspot.com/book/bradsdadsland"
+            href={BRADS_BOOKING_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="underline hover:text-beigeSecondary"
+            onClick={() => trackReservationClick("policies")}
           >
             The easiest way to secure your site.
           </a>

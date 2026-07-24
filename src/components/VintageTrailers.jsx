@@ -1,4 +1,8 @@
 import LightboxGallery from "./LightboxGallery";
+import {
+  BRADS_BOOKING_URL,
+  trackReservationClick,
+} from "../site/bookingTracking.js";
 
 import heroBanner from "../assets/airfloat1950-1.png";
 
@@ -223,10 +227,11 @@ const VintageTrailers = () => (
               Vintage Trailers – Camping with indoor comfort
             </h1>
             <a
-              href="https://www.campspot.com/book/bradsdadsland"
+              href={BRADS_BOOKING_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block bg-beigePrimary text-brownPrimary hover:bg-brownPrimary hover:text-beigePrimary px-6 py-3 rounded-full font-medium transition"
+              onClick={() => trackReservationClick("vintage-trailers")}
             >
               Check Availability
             </a>
