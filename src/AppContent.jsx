@@ -15,6 +15,7 @@ import RGPP from "./components/RGPP";
 import RGPPApply from "./components/RGPPApply";
 import VintageTrailers from "./components/VintageTrailers";
 import AboutUs from "./components/AboutUs.jsx";
+import ContactUs from "./components/ContactUs.jsx";
 import Footer from "./components/Footer";
 import { Arrow } from "./components/Icon";
 
@@ -146,6 +147,7 @@ function AppContent() {
             <Route path="/rgpp/apply" element={<RGPPApply />} />
             <Route path="/vintage-trailers" element={<VintageTrailers />} />
             <Route path="/about-us" element={<AboutUs />} />
+            <Route path="/contact-us" element={<ContactUs />} />
           </Routes>
         </div>
       </div>
