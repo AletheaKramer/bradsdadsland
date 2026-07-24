@@ -100,9 +100,14 @@ const AboutUs = () => {
           life as much as it has helped to round out ours.
         </p>
 
-        <p className="text-lg font-semibold mt-6">
-          The Kramers, Patch and Renea
-        </p>
+        <div className="mt-6">
+          <p className="text-lg font-semibold">
+            Tash &amp; Ian, Marc &amp; Sara, Jim, Jeff, and the Kramer family
+          </p>
+          <p className="mt-1 text-sm">
+            With paws-on help from Blue, Kali, Luna, and Dora 🐾
+          </p>
+        </div>
       </div>
     </div>
   );
