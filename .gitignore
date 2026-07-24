@@ -11,6 +11,12 @@ node_modules
 dist
 dist-ssr
 *.local
+.env
+.brads-dashboard-auth/
+.beachcomber-auth/
+.playwright-cli/
+output/
+.vercel/
 
 # Editor directories and files
 .vscode/*

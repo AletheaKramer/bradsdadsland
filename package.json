@@ -6,8 +6,20 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "dashboard:campspot:ingest": "node scripts/campspot-email-ingest.mjs pull --load=true",
+    "dashboard:deploy-jobs": "node infra/dashboard/deploy.mjs",
+    "dashboard:deploy-schema": "node scripts/dashboard-reporting.mjs deploy",
+    "dashboard:deploy-serving": "node scripts/dashboard-serving.mjs deploy",
+    "dashboard:google-exports": "node scripts/google-managed-exports.mjs setup",
+    "dashboard:google-exports:auth": "node scripts/google-managed-exports.mjs auth",
+    "dashboard:inspect": "node scripts/dashboard-reporting.mjs inspect",
+    "dashboard:password-hash": "node api/_lib/generate-password-hash.js",
+    "dashboard:snapshot": "node scripts/dashboard-reporting.mjs snapshot",
+    "dashboard:test": "node --test tests/dashboard-*.test.mjs tests/reporting-*.test.mjs tests/campspot-*.test.mjs tests/tracking-*.test.mjs tests/infra-*.test.mjs",
+    "dashboard:validate": "node scripts/dashboard-reporting.mjs validate",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "npm run dashboard:test"
   },
   "dependencies": {
     "react": "^18.3.1",
